@@ -1,0 +1,28 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+header {
+    display: flex;
+    justify-content: center;
+}
+header div {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header div a {
+    text-decoration: none;
+    color: white;
+    background-image: linear-gradient(rgb(0, 110, 110), rgb(0, 185, 185));
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 2px 2px rgb(204, 204, 204);
+}
+header div a:hover {
+    background-image: linear-gradient(to top ,rgb(0, 145, 145), rgb(0, 190, 190));
+}

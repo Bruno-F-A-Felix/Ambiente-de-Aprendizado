@@ -1,0 +1,61 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(0, 0, 0, 0.20);
+}
+header {
+    display: flex;
+    justify-content: center;
+}
+main {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main article {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+main article table {
+    width: 80%;
+    height: 90%;
+}
+main article table caption {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 1.2rem;
+}
+main article table, th, td {
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+main article table tr:nth-child(even) {
+    background-color: rgba(0, 0, 100, 0.20);
+}
+main article table tr:hover {
+    background-color: rgba(0, 0, 100, 0.20);
+}
+main article table tfoot tr:hover,
+main article table thead tr:hover {
+    background-color: transparent;
+}
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+}
+footer div {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+footer div a {
+    text-decoration: none;
+    color: black;
+}
+footer div a:hover {
+    text-decoration: underline;
+}

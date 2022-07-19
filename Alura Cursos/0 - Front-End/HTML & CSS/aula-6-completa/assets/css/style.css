@@ -1,0 +1,251 @@
+header {
+	background: #BBBBBB;
+	padding: 20px 0;
+}
+
+.caixa {
+	position: relative;
+	width: 940px;
+	margin: 0 auto;
+}
+
+nav {
+	position: absolute;
+	top: 110px;
+	right: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0 0 0 15px;
+}
+
+nav a {
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #C78C19;
+	text-decoration: underline;
+}
+
+.produtos {
+	width: 940px;
+	height: 420px;
+	margin: 0 auto;
+	padding: 50px 0;
+	display: flex;
+}
+
+.produtos li {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 30%;
+	vertical-align: top;
+	margin: 0 1.5%;
+	padding: 30px 20px;
+	box-sizing: border-box;
+	border: 2px groove #000000;
+	border-radius: 10px;
+}
+
+.produtos li:hover {
+	border-color: #C78C19;
+}
+
+.produtos li:active {
+	border-color: #088C19;	
+}
+
+.produtos li:hover h2 {
+	font-size: 34px;
+}
+
+.produtos h2 {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.produtos li img {
+	flex: 1;
+}
+
+.produto-descricao {
+	font-size: 18px;
+}
+
+.produto-preco {
+	font-size: 22px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+/*Iniciando estilização da Página Contato*/
+
+main form {
+	width: 940px;
+	margin: 30px auto;
+}
+
+main form .personalData {
+	width: 100%;
+	margin: auto;
+	border-top: 2px groove black;
+	border-left: 1px dotted black;
+	padding: 15px 0px 15px 15px;
+	display: grid;
+	grid-template-areas: 
+		"takePersonalData scheduling"
+		"takePersonalData send"
+	;
+}
+
+main form .personalData legend {
+	padding: 5px 10px 5px 5px;
+	font-size: 1.7rem;
+}
+
+main form .personalData .takePersonalData {
+	width: 95%;
+	grid-area: takePersonalData;
+}
+
+main form .personalData .takePersonalData label {
+	display: block;
+	margin-bottom: 20px;
+	font-size: 1.2rem;
+}
+
+main form .personalData .takePersonalData label input {
+	font-size: 1rem;
+	height: 24px;
+	width: 100%;
+	padding: 3px;
+	margin-top: 10px;
+}
+
+main form .personalData .takePersonalData label textarea {
+	resize: none;
+	font-size: 1rem;
+	height: 100px;
+	width: 80%;
+	padding: 3px;
+	margin-top: 10px;
+}
+
+main form .personalData .scheduling {
+	grid-area: scheduling;
+	border-top: 2px solid black;
+	border-style: inset;
+	padding-left: 10px;
+}
+
+main form .personalData .scheduling legend {
+	font-size: 1.6rem;
+}
+
+main form .personalData .scheduling .takeScheduling {
+	display: block;
+	font-size: 1.2rem;
+}
+main form .personalData .scheduling .takeScheduling .radioContact {
+	margin-top: 15px;
+}
+main form .personalData .scheduling .takeScheduling .radioContact div {
+	margin-bottom: 15px;
+}
+main form .personalData .scheduling .takeScheduling .radioContact label {
+	font-size: 1.05rem;
+}
+main form .personalData .scheduling .takeScheduling .schedulingTime {
+	display: block;
+	position: relative;
+}
+main form .personalData .scheduling .takeScheduling .schedulingTime .schedulingTimeSelect {
+	margin: 15px 0px;
+	display: block;
+}
+main form .personalData .scheduling .takeScheduling .schedulingTime .schedulingTimeSelect div {
+	margin: 15px 0px;
+}
+main form .personalData .scheduling .takeScheduling .schedulingTime .schedulingTimeSelect select {
+	padding: 2px 8px;
+	font-size: 0.9rem;
+}
+main form .personalData .scheduling .takeScheduling .schedulingTime .schedulingTimeTable {
+	position: absolute;
+    right: 45%;
+    top: 58%;
+}
+main form .personalData .scheduling .takeScheduling .schedulingTime .schedulingTimeTable thead {
+	background-color: #BBBBBB;
+}
+main form .personalData .scheduling .takeScheduling .schedulingTime .schedulingTimeTable th,
+main form .personalData .scheduling .takeScheduling .schedulingTime .schedulingTimeTable td {
+	border: 1px solid black;
+	padding: 2px 8px;
+	text-align: center;
+}
+
+main form .personalData .scheduling .takeScheduling .reciveNotifications {
+	margin-top: 90px;
+}
+main form .personalData .scheduling .takeScheduling .reciveNotifications input {
+	display: inline;
+}
+main form .personalData .scheduling .takeScheduling .reciveNotifications div {
+	display: inline;
+	font-size: 1.1rem;
+}
+
+
+
+main form .personalData .send {
+	grid-area: send;
+	margin: auto;
+}
+main form .personalData .send input {
+	padding: 10px 20px;
+	font-size: 1.2rem;
+	background-color: orange;
+	border: 0px;
+	transition: 1s all;
+}
+main form .personalData .send:hover input {
+	border: 1px solid #ccc;
+	color: white;
+	font-size: 1.4rem;
+	transform: rotate(360deg);
+}
+
+
+
+
+/*FiM da estilização da Página Contato*/
+
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: black;
+	color: white;
+	padding: 10px 0px;
+	height: 300px;
+}
+
+footer div {
+	flex: 1;
+}
+
+footer div img {
+	width: 100%;
+}
+
+footer p {
+	font-size: 13px;
+}

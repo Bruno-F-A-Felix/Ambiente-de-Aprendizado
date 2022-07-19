@@ -1,0 +1,152 @@
+@keyframes fastBar {
+    0% {
+        background-color: white;
+        width: 100%;
+        left: 0px;
+    }
+    100% {
+        background-color: white;
+        left: 100%;
+        width: 0px;
+    }
+}
+@keyframes textType {
+    from {
+        width: 0px;
+        left: 0px;
+        opacity: 1;
+    }
+    to {
+        width: 100%;
+        left: 0px;
+        opacity: 1;
+    }
+}
+@keyframes buttomDuel {
+    0% {
+        background-color: #e72823;
+    }
+    25% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: #e72823;
+    }
+    60% {
+        background-color: transparent;
+    }
+    75% {
+        background-color: #e72823;
+    }
+    85% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: #e72823;
+    }
+}
+@keyframes buttomDuelText {
+    from {
+        width: 0px;
+        left: 0px;
+    }
+    to {
+        width: 100%;
+        left: 0px;
+        opacity: 1;
+    }
+}
+body {
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    width: 990px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../images/background_yugi.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .textBar,
+header img,
+header .buttomDuel {
+    margin: 10px;
+}
+header .textBar {
+    width: 230px;
+    height: 34px;
+    position: relative;
+}
+header .textBar .text {
+    width: 0px;
+    position: absolute;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: calc(2rem - 6px);
+    text-shadow: 2px 2px 4px rgb(0, 14, 77);
+    text-transform: uppercase;
+    font-weight: bold;
+    overflow: hidden;
+    opacity: 0;
+    white-space: nowrap;
+    animation: textType 2.5s steps(22) 2s forwards;
+}
+header .textBar .bar {
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    background-color: white;
+    animation: fastBar 0.2s 2s normal forwards;
+}
+header img {
+    object-fit: contain;
+    width: 50vw;
+    height: auto;
+}
+header .buttomDuel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 50px;
+    border-radius: 100px;
+    font-size: 25px;
+    animation: buttomDuel 0.7s 1s forwards;
+}
+header .buttomDuel a {
+    width: 90px;
+    height: 30px;
+    padding-bottom: 3px;
+    margin: 0px;
+    position: relative;
+    text-decoration: none;
+}
+header .buttomDuel a .buttomText {
+    width: 0px;
+    height: auto;
+    position: absolute;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    text-shadow: 0px 0px 8px white;
+    white-space: nowrap;
+    opacity: 0;
+    animation: buttomDuelText 0.7s 2s forwards;
+}
+header .buttomDuel a .buttomBar {
+    width: 0px;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    animation: fastBar 0.2s 2s normal forwards;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Contato - Barbearia Alura</title>
+
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<header>
+		<div class="caixa">
+			<h1><img src="assets/images/logo.png"></h1>
+
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="produtos.html">Produtos</a></li>
+					<li><a href="contato.html">Contato</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+    <main>
+		<form action="" method="get">
+			<fieldset class="personalData">
+				<legend>Dados Pessoais</legend>
+
+				<div class="takePersonalData">
+					<label>Nome e Sobrenome <br>
+						<input type="text" name="name" id="name" placeholder="Insira seu nome e sobrenome aqui" title="Insira seu nome aqui" required>
+					</label>
+					<label>Email <br>
+						<input type="email" name="email" id="email" placeholder="seuemail@dominio.com" title="Insira seu Email aqui" required>
+					</label>
+					<label>Telefone <br>
+						<input type="tel" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" title="Digite o numero do seu telefone" required>
+					</label>
+					<label>Mensagem <br>
+						<textarea name="mensage" id="mensage" placeholder="Insira algum comentário..." title="Digite uma menssagem" required></textarea>
+					</label>
+				</div>
+
+				<fieldset class="scheduling">
+					<legend>Agendamento</legend>
+
+					<div class="takeScheduling">
+						<div class="radioContact">
+							<div>Como prefere o nosso contato?</div>
+							<label>
+								<input type="radio" name="contact" id="radio-contact-whatsapp" checked>
+								WhatsApp
+							</label>
+							<label>
+								<input type="radio" name="contact" id="radio-contact-email">
+								Email
+							</label>
+							<label>
+								<input type="radio" name="contact" id="radio-contact-telefone">
+								Telefone
+							</label>
+						</div>
+						<div class="schedulingTime">
+							<div class="schedulingTimeSelect">
+								<div>Qual horário prefere ser atendido?</div>
+								<select name="openingHours" id="openingHours">
+									<option value="morning">Manhã</option>
+									<option value="afternoon">Tarde</option>
+									<option value="night">noite</option>
+								</select>
+							</div>
+							<table class="schedulingTimeTable">
+								<thead>
+									<tr>
+										<th>Dia</th>
+										<th>horário</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Segunda</td>
+										<td>8h ~ 20h</td>
+									</tr>
+									<tr>
+										<td>Quarta</td>
+										<td>8h ~ 20h</td>
+									</tr>
+									<tr>
+										<td>Sexta</td>
+										<td>8h ~ 20h</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="reciveNotifications">
+							<input type="checkbox" name="notifications" id="notifications" checked>
+							<div>Gostaria de receber nossas novidades por Email?</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<div class="send">
+					<input type="submit" value="Enviar Formulário">
+				</div>
+
+			</fieldset>
+		</form>
+    </main>
+	<footer>
+		<div>
+			<img src="assets/images/logo-branco.png" alt="Logo Barbearia Alura">
+		</div>
+		<p>&copy; Copyright Barbearia Alura - 2022</p>
+	</footer>
+</body>
+</html>

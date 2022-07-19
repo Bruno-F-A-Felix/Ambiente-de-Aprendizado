@@ -1,0 +1,154 @@
+* {
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+	background-color: #FEFEFE;
+}
+
+header {
+	background: #BBBBBB;
+	padding: 20px 0;
+}
+
+.caixa {
+	position: relative;
+	width: 940px;
+	margin: 0 auto;
+}
+
+nav {
+	position: absolute;
+	top: 110px;
+	right: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0 0 0 15px;
+}
+
+nav a {
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #C78C19;
+	text-decoration: underline;
+}
+
+/*INICIO ESTILIZAÇÂO INDEX*/
+
+#banner {
+	width:100%;
+}
+
+.principal {
+	width: 940px;
+	margin: 0 auto;
+	padding: 3rem 0;
+}
+.principal h2 {
+	margin: 0 0 1rem;
+	font-size: 2rem;
+	text-align: center;
+}
+.principal img {
+	width: 120px;
+	float: left;
+	margin: 0 20px 20px 0;
+}
+.principal p {
+	margin: 0 0 1rem;
+}
+.principal p:nth-last-child(2) {
+	margin: 2rem 0;
+}
+.principal p:last-child {
+	clear: left;
+}
+.principal p strong {
+	font-weight: bold;
+}
+.principal p em {
+	font-style: italic;
+}
+
+.map {
+	padding: 3rem 0;
+	background: linear-gradient(#FEFEFE, #888888);
+}
+.map h3 {
+	margin: 0 0 1rem;
+	font-size: 2rem;
+	text-align: center;
+}
+.map p {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+.map .mapContainer {
+	width: 940px;
+	margin: 0 auto;
+}
+
+.beneficios {
+	padding: 3rem 0;
+	background-color: #888888;
+}
+.beneficios h3 {
+	margin: 0 0 1rem;
+	font-size: 2rem;
+	text-align: center;
+}
+.beneficios .beneficiosContainer {
+	width: 640px;
+	margin: 0 auto;
+}
+.beneficios .beneficiosContainer ul {
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+}
+.beneficios .beneficiosContainer ul li::before {
+	content: "★";
+}
+.beneficios .beneficiosContainer ul li:first-child {
+	font-weight: bold;
+}
+.beneficios .beneficiosContainer img {
+	width: 60%;
+	box-shadow: 10px 10px 10px 0 black;
+}
+
+.beneficios .beneficiosVideo {
+	width: 560px;
+	margin: 2rem auto;
+}
+/*FIM ESTILIZAÇÂO INDEX*/
+
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: black;
+	color: white;
+	padding: 10px 0px;
+	height: 300px;
+}
+
+footer div {
+	flex: 1;
+}
+
+footer div img {
+	width: 100%;
+}
+
+footer p {
+	font-size: 13px;
+}

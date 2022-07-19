@@ -1,0 +1,119 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    display: flex;
+    background-color: #e6e7e8;
+}
+header {
+    height: 100vh;
+    width: 20%;
+    background-color: white;
+    border-radius: 0px 120px 120px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .buttomHome {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+header .buttomHome .image {
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .buttomHome .image img {
+    max-width: 70%;
+}
+header .buttomHome .text {
+    margin-left: 10px;
+    font-size: 1.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header .buttomHome .text a {
+    text-decoration: none;
+    color: black;
+}
+header .buttomHome .text a:hover {
+    border-bottom: 1px solid black ;
+}
+header .container {
+    height: 60vh;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: calc((((100vw * 0.2) * 0.7) / 2) / 2 );
+}
+header .container .text {
+    display: flex;
+    align-items: center;
+}
+header .container .text .dot {
+    width: 20px;
+    height: 20px;
+    background-image: linear-gradient(to right, #e735c3, #5689e8);
+    border-radius: 100%;
+}
+header .container .text a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.4rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 5px 25px 5px 20px;
+    margin-left: 20px;
+    border-radius: 50px;
+}
+header .container .text a:hover {
+    background-image: linear-gradient(to right, #e735c3, #5689e8);
+    color: white;
+}
+header .container .bar {
+    width: 4px;
+    height: 100px;
+    background-image: linear-gradient(to bottom, #e735c3, #5689e8);
+    border-radius: 20px;
+    margin-left: 8px;
+}
+main {
+    height: 100vh;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+main .container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+main aside {
+    width: 50%;
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-around;
+    align-items: center;
+}
+main aside .shopCar {
+    font-size: 2rem;
+    margin: 0px;
+    padding: 0px;
+}
+main aside .logIn,
+main aside .singIn {
+    font-size: 1.5rem;
+}
+main aside .searchProduct input {
+    width: 250px;
+    padding: 5px 5px;
+    
+}

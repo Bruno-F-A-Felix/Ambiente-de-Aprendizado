@@ -1,0 +1,102 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    margin: 15px 15px 0px 20px;
+    min-width: calc(100vw * 0.15);
+    height: auto;
+    align-self: flex-end;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .container a {
+    text-decoration: none;
+    color: black;
+}
+header .container a:hover {
+    text-decoration: underline;
+}
+header .container .options {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+header .container .options:hover,
+header .container .profile:hover {
+    background-color: rgb(245, 245, 245);
+}
+header .container .options div {
+    font-size: 2rem;
+}
+header .container .profile {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+header .container .profile img {
+    border-radius: 100%;
+}
+main {
+    width: calc(100vw * 0.8);
+    height: calc(100vh * 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: gainsboro;
+}
+main article {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+main article form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+main article form .googleImg {
+
+}
+main article form #search {
+    width: 600px;
+    height: 30px;
+    padding: 3px 5px 3px 5px;
+}
+main article form .buttons {
+
+}
+main article form .buttons button {
+
+}
+main aside {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+}
+footer {
+    width: 100vw;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    background-color: aqua;
+}
