@@ -1,17 +1,70 @@
+/*ESTILIZAÇÃO PADRÃO DO SITE*/
 body {
-    background-color: #ebebeb;
     margin: 0px;
     padding: 0px;
 }
-
-header {
-
+.container {
+    width: 940px;
+    margin: 0px auto;
 }
 
+/*ESTILIZAÇÃO DO CABEÇALHO*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    padding-left: 20px;
+    font-family: 'Gruppo', cursive;
+    font-size: 2.5rem;
+    position: relative;
+}
+header h1::before {
+    content: '';
+    background-image: url(../img/Sigla_BFAF.png); /*IMPORTANTE, SÓ FUNCIONA SE USARMOS O '../' */
+    position: absolute;
+    left: -28px;
+    width: 100px;
+    height: 100px;
+    z-index: 100000;
+    background-position: center;
+    background-size: contain;
+}
+header nav {
+    font-family: 'Gruppo', cursive;
+}
+header nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+header nav ul li {
+    display: inline-block;
+    padding-right: 10px;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/*ESTILIZAÇÃO DO CORPO*/
 main {
 
 }
+main article {
 
+}
+main aside {
+
+}
+
+/*ESTILIZAÇÃO DO RODAPE*/
 footer {
-
+    
 }
