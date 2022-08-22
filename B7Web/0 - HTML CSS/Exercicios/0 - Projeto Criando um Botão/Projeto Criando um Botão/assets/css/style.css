@@ -255,22 +255,179 @@ main article section #button5:hover::after {
 
 /*SIXTH BUTTOM*/
 main article section #button6::before {
-    top: 0px;
+    top: 50%;
     left: 50%;
 
-    height: 100%;
-    width: 0%;
+    height: 0px;
+    width: 100%;
+
+    transform: translate(-50%, -50%) rotate(45deg);
 }
-main article section #button6::after {
-    bottom: 0px;
-    right: 50%;
+main article section #button6:hover::before {
+    height: 270%;
+}
+
+/*SEVENTH BUTTOM*/
+main article section #button7::before {
+    top: 0px;
+    left: 0px;
 
     height: 100%;
-    width: 0%;
-}
-main article section #button6:hover::before,
-main article section #button6:hover::after {
     width: 100%;
+
+    transform: scaleX(0);
+}
+main article section #button7::after {
+    bottom: 20%;
+    left: 15%;
+
+    height: 2px;
+    width: 70%;
+
+    background-color: white;
+    box-shadow: 0px 0px 1px white, 0px 0px 5px white;
+    transform: scaleX(0);
+    transition: transform 350ms 300ms ease-out;
+}
+main article section #button7:hover::before,
+main article section #button7:hover::after {
+    transform: scaleX(1);
+}
+
+/*EIGHTH BUTTOM*/
+main article section #button8::before {
+    top: 0px;
+    left: 0px;
+
+    height: 100%;
+    width: 100%;
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+}
+main article section #button8:hover::before {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+/*NINTH BUTTOM*/
+main article section #button9::before {
+    top: 0px;
+    left: 0px;
+
+    height: 100%;
+    width: 100%;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 350ms ease-in;
+}
+main article section #button9:hover::before {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+/*TENTH BUTTOM*/
+main article section #button10::before {
+    top: 0px;
+    left: 0px;
+
+    height: 100%;
+    width: 100%;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 350ms ease-in;
+}
+main article section #button10:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/*ELEVENTH BUTTOM*/
+main article section #button11::before {
+    top: 0px;
+    left: 0px;
+
+    height: 100%;
+    width: 100%;
+
+    transform: scaleY(0);
+    transform-origin: top;
+}
+main article section #button11:hover::before {
+    transform: scaleY(1);
+    transform-origin: bottom;
+}
+
+/*TWELFTH BUTTOM*/
+main article section #button12::before {
+    top: 0px;
+    left: 0px;
+
+    height: 100%;
+    width: 100%;
+
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 350ms ease-in;
+}
+main article section #button12:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+/*THIRTEENTH BUTTOM*/
+main article section #button13:hover {
+    background: #730bec url(../img/pixel.png);
+    background-size: 100%;
+
+    transition-delay: .8s;
+    animation: animate1 .8s steps(10) forwards;
+}
+@keyframes animate1 {
+    0% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: -410px;
+    }
+}
+
+/*FOURTEENTH BUTTOM*/
+main article section #button14 {
+    box-shadow: 0px 0px 0px;
+    overflow: visible;
+}
+main article section #button14:hover {
+    text-shadow: 1px 1px 1px #4f23c9, 0px 0px 10px #4f23c9, 5px 0px 50px #5b2be2;
+}
+main article section #button14::before {
+    top: -5px;
+    left: 50%;
+    height: 10px;
+    width: 80%;
+
+    z-index: 1;
+
+    background-color: rgb(235, 235, 235);
+    transform: translate(-50%, 0);
+}
+main article section #button14::after {
+    bottom: -5px;
+    left: 50%;
+    height: 10px;
+    width: 80%;
+
+    z-index: 1;
+
+    background-color: rgb(235, 235, 235);
+    transform: translate(-50%, 0);
+}
+main article section #button14:hover::before,
+main article section #button14:hover::after { 
+    width: 0px;
 }
 
 /*ESTILIZAÇÃO DO ASIDE*/
