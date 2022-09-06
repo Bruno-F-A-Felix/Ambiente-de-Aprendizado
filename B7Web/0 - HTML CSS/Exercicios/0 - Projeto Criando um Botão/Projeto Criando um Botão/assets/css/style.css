@@ -46,8 +46,20 @@ header .buttonNavEffect {
     transition: all 1s cubic-bezier(0.19, 0, 0, 1);
 }
 header h1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
     padding-left: 0px;
     font-size: 2.5rem;
+
+    height: 50px;
+    width: 400px;
+}
+header h1 a {
+    margin: 0px;
+    padding: 0px;
 }
 header nav ul {
     list-style-type: none;
@@ -401,6 +413,7 @@ main article section #button14 {
     overflow: visible;
 }
 main article section #button14:hover {
+    transition-delay: .5s;
     text-shadow: 1px 1px 1px #4f23c9, 0px 0px 10px #4f23c9, 5px 0px 50px #5b2be2;
 }
 main article section #button14::before {
@@ -428,6 +441,55 @@ main article section #button14::after {
 main article section #button14:hover::before,
 main article section #button14:hover::after { 
     width: 0px;
+}
+
+/*FIFTEENTH BUTTOM*/
+main article section #button15 {
+    border-top: none;
+    border-bottom: none;
+}
+main article section #button15:hover {
+    box-shadow: none;
+}
+main article section #button15:target {
+    animation: buttom15 1s 0.8s linear infinite;
+}
+main article section #button15::before {
+    top: 0px;
+    left: 0px;
+    height: 1px;
+    width: 0px;
+
+    background: linear-gradient(90deg, transparent, #4f23c9);
+}
+main article section #button15::after {
+    bottom: 0px;
+    right: 0px;
+    height: 1px;
+    width: 0px;
+
+    background: linear-gradient(90deg, transparent, #4f23c9);
+}
+main article section #button15:target:before,
+main article section #button15:target:after {
+    animation: buttom15BeforeAfter 1 linear infinite;
+}
+@keyframes buttom15 {
+    0% {
+        background-color: inherit;
+    }
+    100% {
+        background-color: #4f23c9;
+    }
+    
+}
+@keyframes buttom15BeforeAfter {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
 /*ESTILIZAÇÃO DO ASIDE*/
