@@ -449,10 +449,15 @@ main article section #button15 {
     border-bottom: none;
 }
 main article section #button15:hover {
+    color: black;
+    text-shadow: none;
     box-shadow: none;
 }
-main article section #button15:target {
-    animation: buttom15 1s 0.8s linear infinite;
+main article section #button15:focus {
+    animation: buttom15 1s 0.8s linear forwards;
+    color: white;
+    text-shadow: 1px 1px 1px white, 0px 0px 10px white, 0px 0px 20px white;
+    box-shadow: 0px 0px 1px #4f23c9, 0px 0px 5px #730bec;
 }
 main article section #button15::before {
     top: 0px;
@@ -470,9 +475,9 @@ main article section #button15::after {
 
     background: linear-gradient(90deg, transparent, #4f23c9);
 }
-main article section #button15:target:before,
-main article section #button15:target:after {
-    animation: buttom15BeforeAfter 1 linear infinite;
+main article section #button15:focus:before,
+main article section #button15:focus:after {
+    animation: buttom15BeforeAfter 1s linear forwards;
 }
 @keyframes buttom15 {
     0% {
