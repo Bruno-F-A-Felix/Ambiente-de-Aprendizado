@@ -21,8 +21,8 @@ body {
     padding: 0px;
     font-family: 'Gruppo', cursive;
     display: grid;
-    gap: 0px;
-    grid-template-rows: 10% 80% 10%;
+    gap: 10px;
+    grid-template-rows: min(160px) auto min(160px);
 }
 .container {
     width: 1024px;
