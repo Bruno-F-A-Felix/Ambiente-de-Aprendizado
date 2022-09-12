@@ -557,6 +557,16 @@ footer .copyright p a:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 800px) {
-    
+/*VERSÃO MOBILE LANDSCAPE*/
+@media (orientation: landscape) {
+    body {
+        background-color: red;
+    }
+}
+
+/*VERSÃO MOBILE PORTRAIT*/
+@media (orientation: portrait) {
+    body {
+        background-color: blue;
+    }
 }
