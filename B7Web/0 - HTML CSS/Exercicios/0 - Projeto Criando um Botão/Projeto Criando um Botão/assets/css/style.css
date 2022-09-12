@@ -508,7 +508,7 @@ main article section #button15:focus:after {
 /*ESTILIZAÇÃO DO ASIDE*/
 main aside div ul {
     margin: 25px 0px 30px 0px;
-    padding-left: 20px;
+    padding-left: 5px;
 }
 main aside div ul li {
     margin-bottom: 10px;
