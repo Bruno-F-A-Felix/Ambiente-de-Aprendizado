@@ -547,13 +547,9 @@ footer .copyright img {
     border-radius: 100%;
 }
 footer .copyright p a {
-    color: black;
     text-decoration: none;
 }
 footer .copyright p a:hover {
     text-decoration: underline;
-}
-footer .copyright p a:visited {
-    color: black;
 }
 
