@@ -30,7 +30,7 @@ body {
     gap: 30px;
 }
 .container {
-    width: 1024px;
+    width: 1000px;
     margin: 0px auto;
 }
 
@@ -506,6 +506,9 @@ main article section #button15:focus:after {
 }
 
 /*ESTILIZAÇÃO DO ASIDE*/
+main aside div {
+    padding-right: 70px;
+}
 main aside div ul {
     margin: 25px 0px 30px 0px;
     padding-left: 5px;
@@ -515,6 +518,7 @@ main aside div ul li {
     margin-left: 0px;
     padding-left: 0px;
     list-style: none;
+    text-align: justify;
 }
 
 /*ESTILIZAÇÃO DO RODAPE*/
@@ -553,3 +557,6 @@ footer .copyright p a:hover {
     text-decoration: underline;
 }
 
+@media (max-width: 800px) {
+    
+}
