@@ -15,6 +15,9 @@
 
 /*ESTILIZAÇÃO PADRÃO DO SITE*/
 
+*a:visited {
+    color: black;
+}
 body {
     background-color: rgb(235, 235, 235);
     margin: 0px;
