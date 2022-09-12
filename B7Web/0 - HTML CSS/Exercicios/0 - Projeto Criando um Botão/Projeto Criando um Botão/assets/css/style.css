@@ -20,9 +20,10 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: 'Gruppo', cursive;
+    font-size: 17px;
     display: grid;
-    gap: 10px;
     grid-template-rows: min(160px) auto min(160px);
+    gap: 30px;
 }
 .container {
     width: 1024px;
@@ -36,7 +37,7 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-header .buttonNavEffect {
+.buttonNavEffect {
     position: relative;
     overflow: hidden;
     padding-bottom: 5px;
@@ -61,12 +62,14 @@ header h1 a {
     margin: 0px;
     padding: 0px;
 }
-header nav ul {
+header nav ul,
+footer .sideBar .sideMenu ul {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
 }
-header nav ul li {
+header nav ul li,
+footer .sideBar .sideMenu ul li {
     display: inline-block;
     margin-right: 10px;
     text-transform: uppercase;
@@ -74,10 +77,10 @@ header nav ul li {
 
 /*ANIMAÇÃO DO MENU DE NAVEGAÇÃO*/
 
-header .buttonNavEffect:hover {
+.buttonNavEffect:hover {
     text-shadow: 0px 0px 1px #730bec;
 }
-header .buttonNavEffect::before {
+.buttonNavEffect::before {
     content: '';
     position: absolute;
     top: 0px;
@@ -88,7 +91,7 @@ header .buttonNavEffect::before {
     clip-path: inset(0 100% 0 0);
     animation: flash 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 1.1s forwards;
 }
-header .buttonNavEffect::after {
+.buttonNavEffect::after {
     content: '';
     position: absolute;
 
@@ -104,7 +107,7 @@ header .buttonNavEffect::after {
 
     transition: width 1s cubic-bezier(0.19, 0, 0, 1);
 }
-header .buttonNavEffect:hover::after {
+.buttonNavEffect:hover::after {
     width: 100%;
 }
 
@@ -506,9 +509,48 @@ main aside .inspiration {
 }
 main aside div ul {
     margin: 25px 0px 30px 0px;
+    padding-left: 20px;
+}
+main aside div ul li {
+    margin-bottom: 10px;
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style: none;
 }
 
 /*ESTILIZAÇÃO DO RODAPE*/
 footer {
-
+    display: flex;
+    flex-direction: column;
 }
+footer .sideBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    margin-top: 20px;
+}
+footer .sideBar .sideMenu,
+footer .sideBar .socialMedia {
+    margin: 20px 0px;
+}
+footer .sideBar .socialMedia a {
+    text-decoration: none;
+    margin: 0px 3px;
+}
+footer .copyright {
+    margin: auto;
+    text-align: center;
+}
+footer .copyright img {
+    width: 80px;
+    border-radius: 100%;
+}
+footer .copyright p a {
+    text-decoration: none;
+}
+footer .copyright p a:hover {
+    text-decoration: underline;
+}
+
