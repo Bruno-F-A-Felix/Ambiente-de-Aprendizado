@@ -558,7 +558,7 @@ footer .copyright p a:hover {
 }
 
 /*VERSÃO MOBILE LANDSCAPE*/
-@media (orientation: landscape) {
+@media (orientation: landscape) and (min-width: 1024px) {
     body {
         background-color: red;
     }
