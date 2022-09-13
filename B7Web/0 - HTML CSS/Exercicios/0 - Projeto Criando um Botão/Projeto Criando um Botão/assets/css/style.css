@@ -27,7 +27,7 @@ body {
     font-size: 17px;
     display: grid;
     grid-template-rows: min(160px) auto min(160px);
-    gap: 30px;
+    row-gap: 30px;
 }
 .container {
     width: 1000px;
@@ -120,7 +120,6 @@ footer .sideBar .sideMenu ul li {
 /*ESTRUTURA PADRÃO DO MAIN E OS TITTLES PRINCIPAIS*/
 main {
     display: grid;
-    gap: 40px;
     grid-template-columns: 65% 35%;
 }
 main h2.mainTitleLayout {
@@ -162,7 +161,7 @@ main .mainTitleLayout::after {
 /*ESTRUTURANDO O ARTICLE*/
 main article section {
     display: grid;
-    gap: 30px;
+    row-gap: 30px;
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -506,12 +505,15 @@ main article section #button15:focus:after {
 }
 
 /*ESTILIZAÇÃO DO ASIDE*/
+main aside {
+    padding-left: 40px;
+}
 main aside div {
-    padding-right: 70px;
+    padding-right: 25px;
 }
 main aside div ul {
     margin: 25px 0px 30px 0px;
-    padding-left: 5px;
+    padding-left: 15px;
 }
 main aside div ul li {
     margin-bottom: 10px;
@@ -558,14 +560,12 @@ footer .copyright p a:hover {
 }
 
 /*VERSÃO MOBILE LANDSCAPE*/
-@media (orientation: landscape) and (max-width: 1024px) {
-    body {
-        background-color: red;
-    }
+@media (orientation: landscape) and (max-width: 980px) {
+
 }
 
 /*VERSÃO MOBILE PORTRAIT*/
-@media (orientation: portrait) {
+@media (orientation: portrait) and (max-width: 840px) {
     body {
         background-color: blue;
     }
