@@ -560,12 +560,22 @@ footer .copyright p a:hover {
 
 /*VERSÃO MOBILE LANDSCAPE*/
 @media (orientation: landscape) and (max-width: 980px) {
+
+    /*ESTRUTURA DO SITE*/
     .container {
         width: 700px;
     }
+
+    /*CABEÇALHO*/
     header {
         flex-direction: column;
         justify-content: space-around;
+    }
+    header .buttonNavEffect {
+        text-shadow: 0px 0px 1px #730bec;
+    }
+    .buttonNavEffect::after {
+        width: 100%;
     }
     header h1 {
         margin-top: 20px;
@@ -574,6 +584,23 @@ footer .copyright p a:hover {
     }
     header nav ul li {
         margin: 0px 10px;
+    }
+
+    /*CORPO DO SITE*/
+    main {
+        display: block;
+        margin: 0px auto;
+    }
+    main article {
+        margin-bottom: 50px;
+    }
+    main aside {
+        padding-left: 0px;
+    }
+
+    /*RODAPÉ*/
+    footer .copyright p a {
+        text-decoration: underline;
     }
 }
 
