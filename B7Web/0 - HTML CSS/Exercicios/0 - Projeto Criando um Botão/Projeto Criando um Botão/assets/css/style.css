@@ -51,9 +51,6 @@ header {
     transition: all 1s cubic-bezier(0.19, 0, 0, 1);
 }
 header h1 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     padding: 0px;
     margin: 0px;
     font-size: 2.5rem;
@@ -606,7 +603,84 @@ footer .copyright p a:hover {
 
 /*VERSÃO MOBILE PORTRAIT*/
 @media (orientation: portrait) and (max-width: 840px) {
+
+    /*ESTRUTURA DO SITE*/
     body {
-        background-color: blue;
+        grid-template-rows: auto;
+        row-gap: 10px;
+    }
+    .container {
+        width: 340px;
+    }
+
+    /*CABEÇALHO*/
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    header .buttonNavEffect {
+        text-shadow: 0px 0px 1px #730bec;
+    }
+    .buttonNavEffect::after {
+        width: 100%;
+    }
+    header h1 {
+        margin: 40px auto;
+        height: auto;
+        width: auto;
+        font-size: 2rem;
+    }
+    header nav {
+        display: block;
+        position: relative;
+        margin-bottom: 60px;
+    }
+    header nav::before {
+        content: url('../img/menuButtom.png');
+        position: absolute;
+        font-size: 2rem;
+        top: 0px;
+        left: -24px;
+
+        display: none;
+    }
+    header nav::after {
+        content: url(../img/);
+    }
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav ul li h4 {
+        margin: 0px;
+        padding: 10px 0px;
+    }
+
+    /*CORPO DO SITE*/
+    main {
+        display: block;
+        margin: 0px auto;
+    }
+    main article {
+        margin-bottom: 50px;
+    }
+    main article section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+        main aside {
+        padding-left: 0px;
+    }
+
+    /*RODAPÉ*/
+    footer .sideBar .sideMenu {
+        display: none;
+    }
+    footer .copyright p a {
+        text-decoration: underline;
     }
 }
