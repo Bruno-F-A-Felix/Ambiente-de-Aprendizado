@@ -667,6 +667,9 @@ footer .copyright p a:hover {
     main article {
         margin-bottom: 50px;
     }
+    main article h2 {
+        font-size: 1.3rem;
+    }
     main article section {
         display: flex;
         flex-direction: column;
