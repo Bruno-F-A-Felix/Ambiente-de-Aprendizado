@@ -20,7 +20,7 @@
     color: black;
 }
 body {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(245, 240, 248);
     margin: 0px;
     padding: 0px;
     font-family: 'Gruppo', cursive;
@@ -426,7 +426,7 @@ main article section #button14::before {
 
     z-index: 1;
 
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(245, 240, 248);
     transform: translate(-50%, 0);
 }
 main article section #button14::after {
@@ -437,7 +437,7 @@ main article section #button14::after {
 
     z-index: 1;
 
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(245, 240, 248);
     transform: translate(-50%, 0);
 }
 main article section #button14:hover::before,
