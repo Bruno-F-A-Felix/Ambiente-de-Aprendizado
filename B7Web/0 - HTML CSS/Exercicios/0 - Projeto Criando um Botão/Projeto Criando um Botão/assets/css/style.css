@@ -554,10 +554,13 @@ footer .copyright img {
     width: 80px;
     border-radius: 100%;
 }
-footer .copyright p a {
+footer .copyright address {
+    padding: 20px 0px 40px 0px;
+}
+footer .copyright address a {
     text-decoration: none;
 }
-footer .copyright p a:hover {
+footer .copyright address a:hover {
     text-decoration: underline;
 }
 
@@ -602,7 +605,7 @@ footer .copyright p a:hover {
     }
 
     /*RODAPÉ*/
-    footer .copyright p a {
+    footer .copyright address a {
         text-decoration: underline;
     }
 }
@@ -734,7 +737,7 @@ footer .copyright p a:hover {
     footer .sideBar .sideMenu {
         display: none;
     }
-    footer .copyright p a {
+    footer .copyright address a {
         text-decoration: underline;
     }
 }
