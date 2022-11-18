@@ -1,0 +1,34 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+    background-color: #222;
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.container {
+    height: auto;
+    max-width: 940px;
+}
+.alingItens {
+    height: 10vh;
+    width: 100%;
+
+    text-align: center;
+}
+header {
+
+}
+main {
+    height: 80vh;
+    width: 100%;
+
+    text-align: center;
+}
+footer a:hover {
+    text-decoration: underline;
+}
