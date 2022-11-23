@@ -13,21 +13,46 @@ a {
 .container {
     height: auto;
     max-width: 940px;
-}
-.alingItens {
-    height: 10vh;
-    width: 100%;
 
-    text-align: center;
+    margin: auto;
 }
 header {
-
+    height: 10vh;
 }
 main {
     height: 80vh;
     width: 100%;
 
     text-align: center;
+
+    background-color: #ccc;
+}
+main article {
+    background-color: blueviolet;
+}
+main article h2 {
+    text-align: left;
+
+    margin-left: 100px;
+}
+main article .painel {
+
+}
+main article .painel .teclado {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(4, 50px);
+
+    /*DICA: Com flexbox -> Define o tamanho do '.painel' proporcional a 3 botões. Depois ativa o 'wrap' nas linhas*/
+}
+main article .painel .teclado input {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: larger;
+    font-weight: bold;
+}
+main article .painel .number {
+
 }
 footer a:hover {
     text-decoration: underline;
