@@ -5,6 +5,9 @@ body {
     
     background-color: #222;
     color: white;
+
+    display: grid;
+    grid-template-rows: 10vh 80vh 10vh;
 }
 a {
     text-decoration: none;
@@ -13,30 +16,38 @@ a {
 .container {
     height: auto;
     max-width: 940px;
+    min-width: 940px;
 
     margin: auto;
 }
 header {
-    height: 10vh;
+}
+header h1 {
+    padding-top: 5px;
 }
 main {
-    height: 80vh;
-    width: 100%;
-
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background-color: #ccc;
 }
-main article {
+main .container {
     background-color: blueviolet;
+}
+main article {
+
 }
 main article h2 {
     text-align: left;
 
     margin-left: 100px;
+    padding-top: 10px;
 }
 main article .painel {
-
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 main article .painel .teclado {
     display: grid;
@@ -50,9 +61,33 @@ main article .painel .teclado input {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: larger;
     font-weight: bold;
+
+    border: 1px solid #222;
+    border-radius: 10px;
 }
 main article .painel .number {
+    display: inline-block;
+}
+main article .painel .number input {
+    width: 250px;
+    height: 100px;
 
+    font-size: 24px;
+
+    color: white;
+
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 1);
+}
+footer {
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer address {
+    margin-bottom: 5px;
 }
 footer a:hover {
     text-decoration: underline;
