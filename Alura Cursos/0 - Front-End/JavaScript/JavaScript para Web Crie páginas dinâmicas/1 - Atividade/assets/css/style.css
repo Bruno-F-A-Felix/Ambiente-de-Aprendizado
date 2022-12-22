@@ -27,55 +27,91 @@ header h1 {
 }
 main {
     display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #ccc;
 }
 main .container {
-    background-color: blueviolet;
+}
+main article {
 }
 main article h2 {
+    display: inline-block;
+    position: relative;
+
     text-align: left;
 
     margin-left: 100px;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-right: 20px;
+}
+main article h2::before {
+    content: "";
+    position: absolute;
+
+    left: 0px;
+    bottom: 3px;
+
+    width: 0px;
+    height: 1px;
+    transition: all 0.5s 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    background-color: aqua;
+}
+main article h2:hover::before {
+    width: 100%;
 }
 main article .painel {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+
+    margin-bottom: 150px;
 }
 main article .painel .teclado {
     display: grid;
-    gap: 5px;
-    grid-template-columns: repeat(3, 50px);
-    grid-template-rows: repeat(4, 50px);
+    row-gap: 10px;
+    column-gap: 30px;
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(4, 60px);
 
     /*DICA: Com flexbox -> Define o tamanho do '.painel' proporcional a 3 botões. Depois ativa o 'wrap' nas linhas*/
 }
 main article .painel .teclado input {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: larger;
+    font-size: x-large;
     font-weight: bold;
 
+    cursor: pointer;
+
     border: 1px solid #222;
-    border-radius: 10px;
+    border-radius: 6px;
+}
+main article .painel .teclado input:active {
+    margin-right: 3px;
+    margin-top: 3px;
+
+    margin-left: 1px;
+    margin-bottom: 1px;
 }
 main article .painel .number {
     display: inline-block;
+    margin-bottom: 40px;
+    margin-left: 120px;
 }
 main article .painel .number input {
-    width: 250px;
-    height: 100px;
+    width: 240px;
+    height: 60px;
 
     font-size: 24px;
 
     color: white;
 
-    background-color: rgba(0, 0, 0, 0);
-    border-color: rgba(0, 0, 0, 1);
+    border: 0px;
+    background-color: #222;
+    border-color: #222;
+}
+main article .painel .number input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
 }
 footer {
     margin: auto;
