@@ -20,17 +20,11 @@ a {
     max-width: 940px;
     min-width: 940px;
 }
-header {
-}
 header h1 {
     padding-top: 5px;
 }
 main {
     display: flex;
-}
-main .container {
-}
-main article {
 }
 main article h2 {
     display: inline-block;
