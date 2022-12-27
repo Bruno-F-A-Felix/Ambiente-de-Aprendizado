@@ -1,2 +1,7 @@
-const button1 = document.querySelector('#button1');
+function digita(button, index){
+    
 
+    console.log(button.srcElement.defaultValue);
+}
+
+document.querySelectorAll('.button').onclick = digita;
