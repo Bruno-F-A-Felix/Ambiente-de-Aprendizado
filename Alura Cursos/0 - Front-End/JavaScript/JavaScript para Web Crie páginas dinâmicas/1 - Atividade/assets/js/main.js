@@ -1,4 +1,5 @@
 const listaDeButtons = document.querySelectorAll('.button');
+const showNumber = document.querySelector('.number input');
 let contador = 0;
 
 while(contador < listaDeButtons.length){
@@ -10,6 +11,8 @@ while(contador < listaDeButtons.length){
 }
 
 function digita(buttonValue){
+    showNumber.value += parseInt(buttonValue);
+
     console.log(buttonValue);
 }
 
