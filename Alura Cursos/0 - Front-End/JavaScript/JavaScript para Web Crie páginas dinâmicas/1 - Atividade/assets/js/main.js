@@ -1,7 +1,15 @@
-function digita(button){
-    
+const listaDeButtons = document.querySelectorAll('.button');
+let contador = 0;
 
-    console.log(button.srcElement.defaultValue);
+while(contador < listaDeButtons.length){
+    let vl = listaDeButtons[contador].value;
+
+    listaDeButtons[contador++].onclick = function(){
+        digita(vl);
+    };
 }
 
-document.querySelector('.button').onclick = digita;
+function digita(buttonValue){
+    console.log(buttonValue);
+}
+
