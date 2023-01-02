@@ -1,7 +1,7 @@
-function digita(button, index){
+function digita(button){
     
 
     console.log(button.srcElement.defaultValue);
 }
 
-document.querySelectorAll('.button').onclick = digita;
+document.querySelector('.button').onclick = digita;
