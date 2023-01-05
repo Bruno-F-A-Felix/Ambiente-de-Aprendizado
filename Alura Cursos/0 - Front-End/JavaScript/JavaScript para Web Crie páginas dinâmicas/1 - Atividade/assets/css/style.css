@@ -79,6 +79,10 @@ main article .painel .teclado input {
     border: 1px solid #222;
     border-radius: 6px;
 }
+main article .painel .teclado input:last-child {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
 main article .painel .teclado input:active {
     margin-right: 3px;
     margin-top: 3px;
