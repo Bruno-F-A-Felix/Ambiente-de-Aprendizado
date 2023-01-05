@@ -11,8 +11,7 @@ while(contador < listaDeButtons.length){
 }
 
 function digita(buttonValue){
-    showNumber.value += parseInt(buttonValue);
-
-    console.log(buttonValue);
+    if(showNumber.value.length != 10 || showNumber.value.length < 10)
+        showNumber.value += parseInt(buttonValue);
 }
 
