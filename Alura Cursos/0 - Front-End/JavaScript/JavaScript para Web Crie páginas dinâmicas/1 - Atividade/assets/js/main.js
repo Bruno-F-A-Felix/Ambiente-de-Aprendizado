@@ -15,5 +15,6 @@ function digita(buttonValue){
         showNumber.value += parseInt(buttonValue);
     else
         showNumber.classList.add("tremer");
+    showNumber.classList.remove("tremer");
 }
 
