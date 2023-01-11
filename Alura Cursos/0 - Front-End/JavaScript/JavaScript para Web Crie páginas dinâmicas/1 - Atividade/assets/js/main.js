@@ -2,6 +2,8 @@ const listaDeButtons = document.querySelectorAll('.button');
 const showNumber = document.querySelector('.number input');
 let contador = 0;
 
+console.log(testando);
+
 while(contador < listaDeButtons.length){
     let vl = listaDeButtons[contador].value;
 
