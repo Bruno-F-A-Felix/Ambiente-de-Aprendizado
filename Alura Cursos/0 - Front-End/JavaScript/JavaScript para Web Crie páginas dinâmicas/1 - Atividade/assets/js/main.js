@@ -12,6 +12,9 @@ while(contador < listaDeButtons.length){
 }
 
 function digita(buttonValue){
+    let className = showNumber.classList[0];
+    console.log(className);
+
     if(showNumber.value.length != 10 || showNumber.value.length < 10)
         showNumber.value += parseInt(buttonValue);
     else
