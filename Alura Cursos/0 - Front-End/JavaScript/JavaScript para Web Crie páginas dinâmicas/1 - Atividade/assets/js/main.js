@@ -8,6 +8,7 @@ while(contador < listaDeButtons.length){
     listaDeButtons[contador++].onclick = function(){
         digita(vl);
     };
+    showNumber.classList.remove("tremer");
 }
 
 function digita(buttonValue){
@@ -15,6 +16,5 @@ function digita(buttonValue){
         showNumber.value += parseInt(buttonValue);
     else
         showNumber.classList.add("tremer");
-    showNumber.classList.remove("tremer");
 }
 
