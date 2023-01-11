@@ -13,10 +13,8 @@ while(contador < listaDeButtons.length){
 function digita(buttonValue){
     if(showNumber.value.length != 10 || showNumber.value.length < 10)
         showNumber.value += parseInt(buttonValue);
-    else{
-        let phoneNumber = document.querySelector('input[type="tel"]');
-        phoneNumber.classList.add("tremer");
-    }
-    phoneNumber.classList.remove("tremer");
+    else
+        showNumber.classList.add("tremer");
+    showNumber.classList.remove("tremer");
 }
 
