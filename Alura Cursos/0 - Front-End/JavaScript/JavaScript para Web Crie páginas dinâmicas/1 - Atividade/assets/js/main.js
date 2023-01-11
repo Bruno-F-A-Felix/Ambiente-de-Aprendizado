@@ -2,8 +2,6 @@ const listaDeButtons = document.querySelectorAll('.button');
 const showNumber = document.querySelector('.number input');
 let contador = 0;
 
-console.log("testando");
-
 while(contador < listaDeButtons.length){
     let vl = listaDeButtons[contador].value;
 
@@ -17,7 +15,8 @@ function digita(buttonValue){
         showNumber.value += parseInt(buttonValue);
     else{
         let phoneNumber = document.querySelector('input[type="tel"]');
-        console.log(phoneNumber.value);
+        phoneNumber.classList.add("tremer");
     }
+    phoneNumber.classList.remove("tremer");
 }
 
