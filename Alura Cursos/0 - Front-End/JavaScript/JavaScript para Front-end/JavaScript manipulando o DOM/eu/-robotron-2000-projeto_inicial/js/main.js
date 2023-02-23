@@ -1,3 +1,10 @@
+
+
+
+
+
+/* COMENTANDO O PROJETO PRONTO - TENTATIVA 01
+
 const controle = document.querySelectorAll("[data-controle]");       //Botões de mais e menos
 const estatistica = document.querySelectorAll("[data-estatistica]"); //Habilidades do robo
 
@@ -24,3 +31,5 @@ function atualizaEstatistica(valorControle, parteDoRobo){ //Função para atuali
             elemento.textContent = parseInt(elemento.textContent) + pecas[parteDoRobo][elemento.dataset.estatistica];
         });
 }
+
+*/
