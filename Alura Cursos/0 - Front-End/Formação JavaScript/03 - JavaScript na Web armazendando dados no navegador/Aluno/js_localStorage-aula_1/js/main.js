@@ -34,7 +34,7 @@ function criaElemento(nome, quantidade) {           // Função para alimentar a
 
     itens.push(itemAtual);  // Criando um array de objetos, ou seja, um array de itens.
 
-    localStorage.setItem("item", JSON.stringify(itens)); // Inserindo o array de objetos. JSON.stringify() -> Transforma o vetor em string
+    localStorage.setItem("item", JSON.stringify(itens)); // Inserindo o array de objetos. JSON.stringify() -> É o método utilizado para converter valores em JavaScript para tipo texto string.
 
     /*
     Forma de inserção anterior, deixei pois possuí um conhecimento válido
