@@ -26,6 +26,6 @@ function criaElemento(nome, quantidade) {           // Função para alimentar a
 
     lista.appendChild(novoItem);    // Adicionando um novo item a lista.
 
-    localStorage.setItem("nome", nome);             // Dessa forma inserimos um objeto de nome: 'nome', e dado: 'nome'
+    localStorage.setItem("nome", nome); // setItem() -> Dessa forma inserimos um objeto de nome: 'nome', e dado: 'nome'
     localStorage.setItem("quantidade", quantidade); // O mesmo vale aqui para quantidade
 }
