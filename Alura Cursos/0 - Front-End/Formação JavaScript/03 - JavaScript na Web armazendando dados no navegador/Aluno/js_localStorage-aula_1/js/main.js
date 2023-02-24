@@ -1,5 +1,6 @@
 const form = document.getElementById("novoItem"); // Pegamos todo o formulario
 const lista = document.getElementById("lista");   // Pegamos a lista de itens que vamos alimentar
+const itens = []; // Criamos o array de elementos da lista que iremos salvar no localStorage
 
 form.addEventListener("submit", (evento) => {    // Monitoramos o envio do formulario
     evento.preventDefault();                      // Fazemos com que o evento padrão de envio do formulario seja cancelado
@@ -26,6 +27,21 @@ function criaElemento(nome, quantidade) {           // Função para alimentar a
 
     lista.appendChild(novoItem);    // Adicionando um novo item a lista.
 
-    localStorage.setItem("nome", nome); // setItem() -> Dessa forma inserimos um objeto de nome: 'nome', e dado: 'nome'
+    let itemAtual = {       // Criando um objeto para coletar os dados dos itens que acabaram de ser adicionados
+        "nome": nome,
+        "quantidade": quantidade,
+    }
+
+    itens.push(itemAtual);  // Criando um array de objetos, ou seja, um array de itens.
+
+    localStorage.setItem("item", JSON.stringify(itens)); // Inserindo o array de objetos. JSON.stringify() -> Transforma o vetor em string
+
+    /*
+    Forma de inserção anterior, deixei pois possuí um conhecimento válido
+
+    localStorage.setItem("nome", nome); // setItem() -> Dessa forma inserimos um item de nome: 'nome', e dado: 'nome'
     localStorage.setItem("quantidade", quantidade); // O mesmo vale aqui para quantidade
+
+    localStorage.clear -> Limpa todos os dados em nosso localStorage.
+    */
 }
