@@ -1,6 +1,10 @@
 const form = document.getElementById("novoItem"); // Pegamos todo o formulario
 const lista = document.getElementById("lista");   // Pegamos a lista de itens que vamos alimentar
-const itens = []; // Criamos o array de elementos da lista que iremos salvar no localStorage
+const itens = JSON.parse(localStorage.getItem("item")) || []; // Criamos o array de elementos da lista vazio caso não tenha nada salvo no localStorage
+
+itens.forEach( (elemento) => {          // Aqui estamos percorrendo todo o Array de itens
+    console.log(elemento.nome, elemento.quantidade);    // Verificando se está tudo certinho.
+});
 
 form.addEventListener("submit", (evento) => {    // Monitoramos o envio do formulario
     evento.preventDefault();                      // Fazemos com que o evento padrão de envio do formulario seja cancelado
