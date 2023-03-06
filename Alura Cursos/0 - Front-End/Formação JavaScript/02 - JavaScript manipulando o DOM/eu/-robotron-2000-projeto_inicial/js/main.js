@@ -1,8 +1,3 @@
-
-
-
-
-
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 01
 
 const controle = document.querySelectorAll("[data-controle]");       //Botões de mais e menos
@@ -33,3 +28,13 @@ function atualizaEstatistica(valorControle, parteDoRobo){ //Função para atuali
 }
 
 */
+
+/* COMENTANDO O PROJETO PRONTO - TENTATIVA 02 */
+
+const botao = document.querySelectorAll([data-controle]);
+
+botao.forEach(element => {
+    element.addEventListener('click', evento => {
+        
+    });
+});
