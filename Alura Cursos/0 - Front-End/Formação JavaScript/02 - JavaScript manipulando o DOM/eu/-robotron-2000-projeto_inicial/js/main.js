@@ -11,7 +11,7 @@ controle.forEach( (elemento) => {
 })
 
 function  manipulaDados (valorControle, elementoPai){ // Função para adicionar pontos as partes do robo
-    let valor = elementoPai.querySelector("[data-contador]");
+    let valor = elementoPai.querySelector("[data-contador]"); // Pegando o elemento que contem a contagem
 
     valorControle === "-" ? valor.value = parseInt(valor.value) - 1 : valor.value = parseInt(valor.value) + 1;
 }
@@ -31,11 +31,16 @@ function atualizaEstatistica(valorControle, parteDoRobo){ //Função para atuali
 
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 02 */
 
-const botao = document.querySelectorAll([data-controle]);
+const botoes = document.querySelectorAll("[data-controle]");
 
-botao.forEach(element => {
+botoes.forEach(element => {
     element.addEventListener('click', evento => {
-        console.log(evento.target.dataset.controle);
-        verificaBotao(evento.target.dataset.controle);
+        verificaBotao(evento.target.dataset.controle, evento.target.parentNode);
     });
 });
+
+function verificaBotao (botaoClick, elementoPAI){
+    let valor = elementoPAI.querySelector("[data-contador]");
+
+    botaoClick === "-" ? valor.value = parseInt(valor.value) - 1 : valor.value = parseInt(valor.value) + 1;
+}
