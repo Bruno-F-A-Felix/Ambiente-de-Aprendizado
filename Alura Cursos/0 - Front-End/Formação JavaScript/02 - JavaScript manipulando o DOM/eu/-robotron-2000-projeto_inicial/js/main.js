@@ -1,3 +1,32 @@
+/* COMENTANDO O PROJETO PRONTO - TENTATIVA 02 */
+
+const botoes = document.querySelectorAll("[data-controle]"); // Aqui pegamos todos os botões de mais e menos
+const dadosDoRobo = document.querySelector("[data-estatistica]"); // Aqui temos todas as estatisticas do robo
+
+dadosDoRobo.forEach(element => {
+    
+});
+
+botoes.forEach(element => { // Percorremos todos os botões
+    element.addEventListener('click', evento => {   // Monitoramos quais serão clicados
+        verificaBotao(evento.target.dataset.controle, evento.target.parentNode);  // Função para adicionar ou remover
+        adicionaValores(evento.target.dataset.peca); // Função para mudar as estatisticas do robo
+    });
+});
+
+function verificaBotao (botaoClick, elementoPAI){  // Aqui fazemos a soma ou subtração
+    let valor = elementoPAI.querySelector("[data-contador]");   // A partir do elemento PAI conseguimos o <input>
+
+    botaoClick === "-" ? valor.value = parseInt(valor.value) - 1 : valor.value = parseInt(valor.value) + 1;
+}
+
+function adicionaValores(pecaClicada){
+    dadosDoRobo.forEach(element => {
+        console.log(element.value);
+    });
+}
+
+
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 01
 
 const controle = document.querySelectorAll("[data-controle]");       //Botões de mais e menos
@@ -29,18 +58,3 @@ function atualizaEstatistica(valorControle, parteDoRobo){ //Função para atuali
 
 */
 
-/* COMENTANDO O PROJETO PRONTO - TENTATIVA 02 */
-
-const botoes = document.querySelectorAll("[data-controle]");
-
-botoes.forEach(element => {
-    element.addEventListener('click', evento => {
-        verificaBotao(evento.target.dataset.controle, evento.target.parentNode);
-    });
-});
-
-function verificaBotao (botaoClick, elementoPAI){
-    let valor = elementoPAI.querySelector("[data-contador]");
-
-    botaoClick === "-" ? valor.value = parseInt(valor.value) - 1 : valor.value = parseInt(valor.value) + 1;
-}
