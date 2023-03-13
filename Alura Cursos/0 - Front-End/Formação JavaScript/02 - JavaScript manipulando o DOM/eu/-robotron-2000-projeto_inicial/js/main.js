@@ -35,6 +35,7 @@ const botao = document.querySelectorAll([data-controle]);
 
 botao.forEach(element => {
     element.addEventListener('click', evento => {
-        
+        console.log(evento.target.dataset.controle);
+        verificaBotao(evento.target.dataset.controle);
     });
 });
