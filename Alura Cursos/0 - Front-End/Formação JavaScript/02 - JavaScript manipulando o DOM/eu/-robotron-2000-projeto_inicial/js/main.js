@@ -1,4 +1,8 @@
-/* COMENTANDO O PROJETO PRONTO - TENTATIVA 02 - UPGRADE COM NÃO NUMEROS NEGATIVOS*/
+/* COMENTANDO O PROJETO PRONTO - TENTATIVA 03 */
+
+
+
+/* COMENTANDO O PROJETO PRONTO - TENTATIVA 02 - UPGRADE COM NÃO NUMEROS NEGATIVOS
 
 const botoes = document.querySelectorAll("[data-controle]"); // Aqui pegamos todos os botões de mais e menos
 const dadosDoRobo = document.querySelectorAll("[data-estatistica]"); // Aqui temos todas as estatisticas do robo
@@ -30,8 +34,7 @@ function adicionaValores(botaoClick, pecaClicada){
             element.textContent = parseInt(element.textContent) - pecas[pecaClicada][element.dataset.estatistica];
     });
 }
-
-
+*/
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 01
 
 const controle = document.querySelectorAll("[data-controle]");       //Botões de mais e menos
