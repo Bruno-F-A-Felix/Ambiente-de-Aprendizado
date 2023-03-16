@@ -1,6 +1,34 @@
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 03 */
 
+const buttons = document.querySelectorAll("[data-controle]");
+const roboStatus = document.querySelectorAll("[data-estatistica]");
 
+buttons.forEach(element => {
+     element.addEventListener('click', e => {
+        clickCheck(e.target.dataset.controle, e.target.dataset.peca, e.target.parentNode);
+     });
+});
+
+function clickCheck(buttonSignal, buttonType, elementDad){
+    let counter = elementDad.querySelector("[data-contador]");
+
+    if(buttonSignal === "+"){
+        counter.value = parseInt(counter.value) + 1;
+        addValues(buttonSignal, buttonType);
+    } else if(counter.value > 0 && buttonSignal === "-"){
+        counter.value = parseInt(counter.value) - 1;
+        addValues(buttonSignal, buttonType);
+    }
+}
+
+function addValues(buttonSignal, buttonType){
+    roboStatus.forEach(element => {
+        if(buttonSignal === "+")
+            element.textContent = parseInt(element.textContent) + pecas[buttonType][element.dataset.estatistica];
+        else
+            element.textContent = parseInt(element.textContent) - pecas[buttonType][element.dataset.estatistica];
+    });
+}
 
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 02 - UPGRADE COM NÃO NUMEROS NEGATIVOS
 
