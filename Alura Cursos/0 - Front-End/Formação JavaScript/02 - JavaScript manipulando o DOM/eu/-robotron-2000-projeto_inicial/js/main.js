@@ -1,28 +1,33 @@
-/* COMENTANDO O PROJETO PRONTO - TENTATIVA 02 */
+/* COMENTANDO O PROJETO PRONTO - TENTATIVA 02 - UPGRADE COM NÃO NUMEROS NEGATIVOS*/
 
 const botoes = document.querySelectorAll("[data-controle]"); // Aqui pegamos todos os botões de mais e menos
-const dadosDoRobo = document.querySelector("[data-estatistica]"); // Aqui temos todas as estatisticas do robo
-
-dadosDoRobo.forEach(element => {
-    
-});
+const dadosDoRobo = document.querySelectorAll("[data-estatistica]"); // Aqui temos todas as estatisticas do robo
 
 botoes.forEach(element => { // Percorremos todos os botões
     element.addEventListener('click', evento => {   // Monitoramos quais serão clicados
-        verificaBotao(evento.target.dataset.controle, evento.target.parentNode);  // Função para adicionar ou remover
-        adicionaValores(evento.target.dataset.peca); // Função para mudar as estatisticas do robo
+        verificaBotao(evento.target.dataset.controle, evento.target.parentNode, evento.target.dataset.peca);  // Função para adicionar ou remover
     });
 });
 
-function verificaBotao (botaoClick, elementoPAI){  // Aqui fazemos a soma ou subtração
+function verificaBotao (botaoClick, elementoPAI, pecaClicada){  // Aqui fazemos a soma ou subtração
     let valor = elementoPAI.querySelector("[data-contador]");   // A partir do elemento PAI conseguimos o <input>
 
-    botaoClick === "-" ? valor.value = parseInt(valor.value) - 1 : valor.value = parseInt(valor.value) + 1;
+    if(botaoClick === "+"){
+        valor.value = parseInt(valor.value) + 1;
+        adicionaValores(botaoClick, pecaClicada);
+    } else if(parseInt(valor.value) > 0 && botaoClick === "-"){
+        valor.value = parseInt(valor.value) - 1;
+        adicionaValores(botaoClick, pecaClicada);
+    }
 }
 
-function adicionaValores(pecaClicada){
+function adicionaValores(botaoClick, pecaClicada){
+    //element.dataset.estatistica
     dadosDoRobo.forEach(element => {
-        console.log(element.value);
+        if(botaoClick === "+")
+            element.textContent = parseInt(element.textContent) + pecas[pecaClicada][element.dataset.estatistica];
+        else
+            element.textContent = parseInt(element.textContent) - pecas[pecaClicada][element.dataset.estatistica];
     });
 }
 

@@ -125,6 +125,7 @@ main {
     text-align: center;
     border: 3px solid var(--main-cinza);
     cursor: pointer;
+    user-select: none;
 }
 
 .linha {
