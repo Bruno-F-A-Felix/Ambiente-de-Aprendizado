@@ -1,4 +1,4 @@
-/* COMENTANDO O PROJETO PRONTO - TENTATIVA 03 
+/* COMENTANDO O PROJETO PRONTO - TENTATIVA 03 */
 
 const buttons = document.querySelectorAll("[data-controle]");
 const roboStatus = document.querySelectorAll("[data-estatistica]");
@@ -29,7 +29,7 @@ function addValues(buttonSignal, buttonType){
             element.textContent = parseInt(element.textContent) - pecas[buttonType][element.dataset.estatistica];
     });
 }
-*/
+
 
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 02 - UPGRADE COM NÃO NUMEROS NEGATIVOS
 
