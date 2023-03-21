@@ -14,7 +14,22 @@ buttons.forEach(element => {
 function clickCheck(buttonSignal, pecaClicada, elementoPai){
     let buttonType = elementoPai.querySelector("[data-contador]");
 
-    buttonSignal === "-" ? parseInt(buttonType.value) -= 1 : parseInt(buttonType.value) += 1;
+    if(buttonSignal === "-" && buttonType.value > 0){
+        buttonType.value = parseInt(buttonType.value) - 1;
+        addValues(buttonSignal, pecaClicada);
+    } else{
+        buttonType.value = parseInt(buttonType.value) + 1;
+        addValues(buttonSignal, pecaClicada);
+    }
+}
+function addValues(buttonSignal, pecaClicada){
+    roboStatus.forEach(element => {
+        if(buttonSignal === "-"){
+            element.textContent = parseInt(element.textContent) - peca[pecaClicada][element.dataset.estatistica];
+        } else{
+            element.textContent = parseInt(element.textContent) + peca[pecaClicada][element.dataset.estatistica];
+        }
+    });
 }
 
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 03 
