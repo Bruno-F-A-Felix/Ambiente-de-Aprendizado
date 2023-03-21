@@ -1,3 +1,8 @@
+/* COMENTANDO O PROJETO PRONTO - TENTATIVA 04 */
+const botoes = document.querySelectorAll("[data-peca]");
+const roboStatus = document.querySelectorAll("")
+
+
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 03 
 
 const buttons = document.querySelectorAll("[data-controle]");
@@ -30,7 +35,6 @@ function addValues(buttonSignal, buttonType){
     });
 }
 */
-
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 02 - UPGRADE COM NÃO NUMEROS NEGATIVOS
 
 const botoes = document.querySelectorAll("[data-controle]"); // Aqui pegamos todos os botões de mais e menos
