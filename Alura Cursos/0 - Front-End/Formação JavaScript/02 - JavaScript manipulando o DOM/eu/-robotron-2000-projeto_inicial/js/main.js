@@ -12,7 +12,9 @@ buttons.forEach(element => {
     });
 });
 function clickCheck(buttonSignal, pecaClicada, elementoPai){
-    
+    let buttonType = elementoPai.querySelector("[data-contador]");
+
+    buttonSignal === "-" ? parseInt(buttonType.value) -= 1 : parseInt(buttonType.value) += 1;
 }
 
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 03 
