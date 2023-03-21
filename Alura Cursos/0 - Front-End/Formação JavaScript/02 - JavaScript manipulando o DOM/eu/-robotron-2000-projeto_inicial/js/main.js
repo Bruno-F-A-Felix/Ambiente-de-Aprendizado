@@ -1,8 +1,19 @@
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 04 */
-const botoes = document.querySelectorAll("[data-peca]");
+const buttons = document.querySelectorAll("[data-peca]");
 const roboStatus = document.querySelectorAll("[data-estatistica]");
 
+buttons.forEach(element => {
+    element.addEventListener('click', e => {
+        let buttonSignal = e.target.dataset.controle;
+        let pecaClicada = e.target.dataset.peca;
+        let elementoPai = e.target.parentNode;
 
+        clickCheck(buttonSignal, pecaClicada, elementoPai);
+    });
+});
+function clickCheck(buttonSignal, pecaClicada, elementoPai){
+    
+}
 
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 03 
 
