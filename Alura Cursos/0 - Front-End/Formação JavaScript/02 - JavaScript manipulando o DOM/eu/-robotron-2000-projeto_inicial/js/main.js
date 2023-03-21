@@ -14,10 +14,10 @@ buttons.forEach(element => {
 function clickCheck(buttonSignal, pecaClicada, elementoPai){
     let buttonType = elementoPai.querySelector("[data-contador]");
 
-    if(buttonSignal === "-" && buttonType.value > 0){
+    if(buttonType.value > 0 && buttonSignal === "-"){
         buttonType.value = parseInt(buttonType.value) - 1;
         addValues(buttonSignal, pecaClicada);
-    } else{
+    } else if(buttonSignal === "+"){
         buttonType.value = parseInt(buttonType.value) + 1;
         addValues(buttonSignal, pecaClicada);
     }
@@ -25,9 +25,9 @@ function clickCheck(buttonSignal, pecaClicada, elementoPai){
 function addValues(buttonSignal, pecaClicada){
     roboStatus.forEach(element => {
         if(buttonSignal === "-"){
-            element.textContent = parseInt(element.textContent) - peca[pecaClicada][element.dataset.estatistica];
+            element.textContent = parseInt(element.textContent) - pecas[pecaClicada][element.dataset.estatistica];
         } else{
-            element.textContent = parseInt(element.textContent) + peca[pecaClicada][element.dataset.estatistica];
+            element.textContent = parseInt(element.textContent) + pecas[pecaClicada][element.dataset.estatistica];
         }
     });
 }
