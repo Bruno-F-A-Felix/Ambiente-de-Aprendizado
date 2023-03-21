@@ -1,6 +1,7 @@
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 04 */
 const botoes = document.querySelectorAll("[data-peca]");
-const roboStatus = document.querySelectorAll("")
+const roboStatus = document.querySelectorAll("[data-estatistica]");
+
 
 
 /* COMENTANDO O PROJETO PRONTO - TENTATIVA 03 
