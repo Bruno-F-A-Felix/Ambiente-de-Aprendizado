@@ -28,7 +28,12 @@ function openModal(key){
     qs('.pizzaBig img').src = pizzaJson[count].img;
     qs('.pizzaInfo h1').innerHTML = pizzaJson[count].name;
     qs('.pizzaInfo--desc').innerHTML = pizzaJson[count].description;
-    qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${pizzaJson[count].price.toFixed(2)}`;
+    qs('.pizzaInfo--size.selected').classList.remove('selected');
+    qs('[data-selected]').classList.add('selected');
+
+    console.log(setPrice(count));
+
+//    qs('.pizzaInfo--actualPrice').innerHTML = setPrice(count);
 
     qs('.pizzaWindowArea').style.opacity = 0;
     qs('.pizzaWindowArea').style.display = 'flex';
@@ -37,3 +42,49 @@ function openModal(key){
     }, 200);
 }
 
+function setPrice(count){
+    let sizes = qsAll('.pizzaInfo--size');
+
+    return("Funcionou");
+
+    /*
+        sizes.forEach(element => {
+        element.querySelector('span').innerHTML = pizzaJson[count].sizes[element.dataset.key];
+
+        return("Funcionou");
+
+        /*
+                    element.addEventListener('click', e => {
+
+            switch (element.dataset.key) {
+                case 0:
+                    e.target.classList.add('selected');
+                    return(000);
+                case 1:
+                    e.target.classList.add('selected');
+                    return(111);
+                case 2:
+                    e.target.classList.add('selected');
+                    return(222);
+                default:
+                    break;
+            }
+        });
+    });
+
+    */
+}
+
+/*
+            if(element.dataset.key === "0"){
+                console.log(e.parentNode);
+            }else if(element.dataset.key === "1"){
+                console.log(e.parentNode);
+            }else if(element.dataset.key === "2"){
+                console.log(e.parentNode);
+            }
+
+
+
+
+*/
