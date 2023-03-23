@@ -44,35 +44,34 @@ function openModal(key){
 
 function setPrice(count){
     let sizes = qsAll('.pizzaInfo--size');
+    let sizeKey;
 
-    return("Funcionou");
-
-    /*
-        sizes.forEach(element => {
+    sizes.forEach(element => {
         element.querySelector('span').innerHTML = pizzaJson[count].sizes[element.dataset.key];
-
-        return("Funcionou");
-
-        /*
-                    element.addEventListener('click', e => {
-
-            switch (element.dataset.key) {
+        element.addEventListener('click', e => {
+            switch (e.target.dataset.key) {
                 case 0:
                     e.target.classList.add('selected');
-                    return(000);
+                    sizeKey = pizzaJson[count].price;
+                    console.log(sizeKey);
+                    break;
                 case 1:
                     e.target.classList.add('selected');
-                    return(111);
+                    sizeKey = pizzaJson[count].price + 5;
+                    console.log(sizeKey);
+                    break;
                 case 2:
                     e.target.classList.add('selected');
-                    return(222);
+                    sizeKey = pizzaJson[count].price + 10;
+                    console.log(sizeKey);
+                    break;
                 default:
                     break;
             }
         });
     });
 
-    */
+    return(sizeKey);
 }
 
 /*
