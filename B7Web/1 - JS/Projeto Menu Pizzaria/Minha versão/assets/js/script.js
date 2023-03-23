@@ -15,16 +15,25 @@ pizzaJson.forEach((element, index) => {
     pizzaOption.querySelector('a').addEventListener('click', (e)=>{
         e.preventDefault();
 
-        let key = e.parentNode;
-        console.log(key);
+        let key = e.target.parentNode;
+        let modeTag = pizzaOption.querySelector('.pizza-item--img');
 
-        // qs('.pizzaBig img').src = pizzaJson[key].img;
-
-        qs('.pizzaWindowArea').style.opacity = 0;
-        qs('.pizzaWindowArea').style.display = 'flex';
-        setTimeout(()=>{
-            qs('.pizzaWindowArea').style.opacity = 1;
-        }, 200);
+        key === modeTag ? openModal(modeTag.parentNode) : openModal(key);
     });
 });
+
+function openModal(key){
+    let count = key.dataset.key
+
+    qs('.pizzaBig img').src = pizzaJson[count].img;
+    qs('.pizzaInfo h1').innerHTML = pizzaJson[count].name;
+    qs('.pizzaInfo--desc').innerHTML = pizzaJson[count].description;
+    qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${pizzaJson[count].price.toFixed(2)}`;
+
+    qs('.pizzaWindowArea').style.opacity = 0;
+    qs('.pizzaWindowArea').style.display = 'flex';
+    setTimeout(()=>{
+        qs('.pizzaWindowArea').style.opacity = 1;
+    }, 200);
+}
 
