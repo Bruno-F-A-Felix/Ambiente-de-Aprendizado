@@ -1,5 +1,6 @@
 const qs = (el) => document.querySelector(el);
 const qsAll = (el) => document.querySelectorAll(el); // 'el' é uma vatiavel criada dentro do parametro da função. Seu valor em enviado quando chamado
+const sizes = qsAll('.pizzaInfo--size');
 
 pizzaJson.forEach((element, index) => {
     let pizzaOption = qs('.pizza-item').cloneNode(true);  // Primeiro precisamos clonar um elemento molde para criarmos um novo e adiciona-lo em seguida
@@ -21,7 +22,11 @@ pizzaJson.forEach((element, index) => {
         key === modeTag ? openModal(modeTag.parentNode) : openModal(key);
     });
 });
-
+sizes.forEach((element) => {
+    element.addEventListener('click', e => {
+        console.log(element);
+    });
+})
 function openModal(key){
     let count = key.dataset.key
 
@@ -30,10 +35,7 @@ function openModal(key){
     qs('.pizzaInfo--desc').innerHTML = pizzaJson[count].description;
     qs('.pizzaInfo--size.selected').classList.remove('selected');
     qs('[data-selected]').classList.add('selected');
-
-    console.log(setPrice(count));
-
-//    qs('.pizzaInfo--actualPrice').innerHTML = setPrice(count);
+    qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${setPrice(count).toFixed(2)}`;
 
     qs('.pizzaWindowArea').style.opacity = 0;
     qs('.pizzaWindowArea').style.display = 'flex';
@@ -41,36 +43,11 @@ function openModal(key){
         qs('.pizzaWindowArea').style.opacity = 1;
     }, 200);
 }
-
 function setPrice(count){
-    let sizes = qsAll('.pizzaInfo--size');
-    let sizeKey;
-
+    let sizeKey = pizzaJson[count].price;
     sizes.forEach(element => {
         element.querySelector('span').innerHTML = pizzaJson[count].sizes[element.dataset.key];
-        element.addEventListener('click', e => {
-            switch (e.target.dataset.key) {
-                case 0:
-                    e.target.classList.add('selected');
-                    sizeKey = pizzaJson[count].price;
-                    console.log(sizeKey);
-                    break;
-                case 1:
-                    e.target.classList.add('selected');
-                    sizeKey = pizzaJson[count].price + 5;
-                    console.log(sizeKey);
-                    break;
-                case 2:
-                    e.target.classList.add('selected');
-                    sizeKey = pizzaJson[count].price + 10;
-                    console.log(sizeKey);
-                    break;
-                default:
-                    break;
-            }
-        });
     });
-
     return(sizeKey);
 }
 
