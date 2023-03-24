@@ -24,16 +24,26 @@ pizzaJson.forEach((element, index) => {
 });
 sizes.forEach((element) => {
     element.addEventListener('click', e => {
-        console.log(element);
+        if(element.dataset.key === "0"){
+            qs('.pizzaInfo--size.selected').classList.remove('selected');
+            element.classList.add('selected');
+
+            changePrice()
+        }else if(element.dataset.key === "1"){
+            qs('.pizzaInfo--size.selected').classList.remove('selected');
+            element.classList.add('selected');
+        }else if(element.dataset.key === "2"){
+            qs('.pizzaInfo--size.selected').classList.remove('selected');
+            element.classList.add('selected');
+        }
     });
-})
+});
 function openModal(key){
     let count = key.dataset.key
 
     qs('.pizzaBig img').src = pizzaJson[count].img;
     qs('.pizzaInfo h1').innerHTML = pizzaJson[count].name;
     qs('.pizzaInfo--desc').innerHTML = pizzaJson[count].description;
-    qs('.pizzaInfo--size.selected').classList.remove('selected');
     qs('[data-selected]').classList.add('selected');
     qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${setPrice(count).toFixed(2)}`;
 
