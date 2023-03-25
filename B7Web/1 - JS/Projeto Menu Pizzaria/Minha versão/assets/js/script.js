@@ -1,16 +1,14 @@
 const qs = (el) => document.querySelector(el);
 const qsAll = (el) => document.querySelectorAll(el); // 'el' é uma vatiavel criada dentro do parametro da função. Seu valor em enviado quando chamado
-const sizes = qsAll('.pizzaInfo--size');
-var weight;
-var keys;
-
-console.log(keys);
+const sizes = qsAll('.pizzaInfo--size');    // Tamanhos
+var weight;                                 // Pesos
+var keys = [];                              // Pizzas
 
 pizzaJson.forEach((element, index) => {
     let pizzaOption = qs('.pizza-item').cloneNode(true);  // Primeiro precisamos clonar um elemento molde para criarmos um novo e adiciona-lo em seguida
 
     pizzaOption.querySelector('a').setAttribute('data-key', index);
-    keys[index] = index;
+    keys.push(index);
     pizzaOption.querySelector('.pizza-item--img img').src = element.img;
     pizzaOption.querySelector('.pizza-item--price').innerHTML = `R$ ${element.price.toFixed(2)}`;
     pizzaOption.querySelector('.pizza-item--name').innerHTML = element.name;
@@ -33,14 +31,17 @@ sizes.forEach((element) => {
             qs('.pizzaInfo--size.selected').classList.remove('selected');
             element.classList.add('selected');
             weight = element.dataset.key
+            setPrice(weight,keys);
         }else if(element.dataset.key === "1"){
             qs('.pizzaInfo--size.selected').classList.remove('selected');
             element.classList.add('selected');
             weight = element.dataset.key
+            setPrice(weight,keys);
         }else if(element.dataset.key === "2"){
             qs('.pizzaInfo--size.selected').classList.remove('selected');
             element.classList.add('selected');
             weight = element.dataset.key
+            setPrice(weight,keys);
         }
     });
 });
@@ -52,6 +53,7 @@ function openModal(key){
     qs('.pizzaInfo--desc').innerHTML = pizzaJson[count].description;
     qs('[data-selected]').classList.add('selected');
     weight = qs('[data-selected]').dataset.key;
+    sizes.forEach(element => element.querySelector('span').innerHTML = pizzaJson[count].sizes[element.dataset.key] );
     qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${pizzaJson[count].price.toFixed(2)}`;
 
     qs('.pizzaWindowArea').style.opacity = 0;
@@ -60,12 +62,8 @@ function openModal(key){
         qs('.pizzaWindowArea').style.opacity = 1;
     }, 200);
 }
-function setPrice(count){
-    let sizeKey = pizzaJson[count].price;
-    sizes.forEach(element => element.querySelector('span').innerHTML = pizzaJson[count].sizes[element.dataset.key] );
-    
+function setPrice(countWeight, arrKeys){  // Essa função funciona quando muda o tamanho da pizza e a quantidade mudam.
 
-    return(sizeKey);
 }
 
 /*
