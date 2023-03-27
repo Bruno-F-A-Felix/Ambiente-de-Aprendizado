@@ -62,8 +62,12 @@ function openModal(key){
         qs('.pizzaWindowArea').style.opacity = 1;
     }, 200);
 }
-function setPrice(countWeight, arrKeys){  // Essa função funciona quando muda o tamanho da pizza e a quantidade mudam.
+function setPrice(typeWeight, arrKeys){  // Essa função funciona quando muda o tamanho da pizza e a quantidade mudam.
+    let changePrice = qs('.pizzaInfo--actualPrice');
 
+    
+
+    changePrice.innerHTML = `R$ ${toFixed(2)}`
 }
 
 /*
