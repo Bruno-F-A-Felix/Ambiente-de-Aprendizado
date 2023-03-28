@@ -1,8 +1,8 @@
 const qs = (el) => document.querySelector(el);
 const qsAll = (el) => document.querySelectorAll(el); // 'el' é uma vatiavel criada dentro do parametro da função. Seu valor em enviado quando chamado
-const sizes = qsAll('.pizzaInfo--size');    // Tamanhos
-var weight;                                 // Pesos
+const sizes = qsAll('.pizzaInfo--size');    // Tamanhos, selecionamos todos os tamanhos de pizzas
 var keys = [];                              // Pizzas
+var weight;                                 // Pesos, 
 
 pizzaJson.forEach((element, index) => {
     let pizzaOption = qs('.pizza-item').cloneNode(true);  // Primeiro precisamos clonar um elemento molde para criarmos um novo e adiciona-lo em seguida
