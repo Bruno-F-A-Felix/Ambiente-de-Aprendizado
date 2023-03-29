@@ -1,14 +1,11 @@
 const qs = (el) => document.querySelector(el);
 const qsAll = (el) => document.querySelectorAll(el); // 'el' é uma vatiavel criada dentro do parametro da função. Seu valor em enviado quando chamado
-const sizes = qsAll('.pizzaInfo--size');    // Tamanhos, selecionamos todos os tamanhos de pizzas
-var keys = [];                              // Pizzas
-var weight;                                 // Pesos, 
+const sizes = qsAll('.pizzaInfo--size');    // Tamanhos, selecionamos todas as tags que contem o tamanho das pizzas
 
 pizzaJson.forEach((element, index) => {
     let pizzaOption = qs('.pizza-item').cloneNode(true);  // Primeiro precisamos clonar um elemento molde para criarmos um novo e adiciona-lo em seguida
 
     pizzaOption.querySelector('a').setAttribute('data-key', index);
-    keys.push(index);
     pizzaOption.querySelector('.pizza-item--img img').src = element.img;
     pizzaOption.querySelector('.pizza-item--price').innerHTML = `R$ ${element.price.toFixed(2)}`;
     pizzaOption.querySelector('.pizza-item--name').innerHTML = element.name;
@@ -25,36 +22,35 @@ pizzaJson.forEach((element, index) => {
         key === modeTag ? openModal(modeTag.parentNode) : openModal(key);
     });
 });
-sizes.forEach((element) => {
-    element.addEventListener('click', () => {
-        if(element.dataset.key === "0"){
-            qs('.pizzaInfo--size.selected').classList.remove('selected');
-            element.classList.add('selected');
-            weight = element.dataset.key
-            setPrice(weight,keys);
-        }else if(element.dataset.key === "1"){
-            qs('.pizzaInfo--size.selected').classList.remove('selected');
-            element.classList.add('selected');
-            weight = element.dataset.key
-            setPrice(weight,keys);
-        }else if(element.dataset.key === "2"){
-            qs('.pizzaInfo--size.selected').classList.remove('selected');
-            element.classList.add('selected');
-            weight = element.dataset.key
-            setPrice(weight,keys);
-        }
-    });
-});
 function openModal(key){
     let count = key.dataset.key
+    let pricePizza;
 
     qs('.pizzaBig img').src = pizzaJson[count].img;
     qs('.pizzaInfo h1').innerHTML = pizzaJson[count].name;
     qs('.pizzaInfo--desc').innerHTML = pizzaJson[count].description;
     qs('[data-selected]').classList.add('selected');
-    weight = qs('[data-selected]').dataset.key;
-    sizes.forEach(element => element.querySelector('span').innerHTML = pizzaJson[count].sizes[element.dataset.key] );
-    qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${pizzaJson[count].price.toFixed(2)}`;
+    pricePizza = pizzaJson[count].price.toFixed(2);
+    qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${(parseFloat(pricePizza) + 10).toFixed(2)}`;
+
+    sizes.forEach((element) => {                                                                    // AQUI O PREÇO MUDA A PARTIR DO PESO ESCOLHIDO
+        element.querySelector('span').innerHTML = pizzaJson[count].sizes[element.dataset.key];
+        element.addEventListener('click', () => {
+            if(element.dataset.key === "0"){
+                qs('.pizzaInfo--size.selected').classList.remove('selected');
+                element.classList.add('selected');
+                qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${pricePizza}`;
+            }else if(element.dataset.key === "1"){
+                qs('.pizzaInfo--size.selected').classList.remove('selected');
+                element.classList.add('selected');
+                qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${(parseFloat(pricePizza) + 5).toFixed(2)}`;
+            }else if(element.dataset.key === "2"){
+                qs('.pizzaInfo--size.selected').classList.remove('selected');
+                element.classList.add('selected');
+                qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${(parseFloat(pricePizza) + 10).toFixed(2)}`;
+            }
+        });
+    });
 
     qs('.pizzaWindowArea').style.opacity = 0;
     qs('.pizzaWindowArea').style.display = 'flex';
@@ -62,24 +58,3 @@ function openModal(key){
         qs('.pizzaWindowArea').style.opacity = 1;
     }, 200);
 }
-function setPrice(typeWeight, arrKeys){  // Essa função funciona quando muda o tamanho da pizza e a quantidade mudam.
-    let changePrice = qs('.pizzaInfo--actualPrice');
-
-    
-
-    changePrice.innerHTML = `R$ ${toFixed(2)}`
-}
-
-/*
-            if(element.dataset.key === "0"){
-                console.log(e.parentNode);
-            }else if(element.dataset.key === "1"){
-                console.log(e.parentNode);
-            }else if(element.dataset.key === "2"){
-                console.log(e.parentNode);
-            }
-
-
-
-
-*/
