@@ -7,7 +7,7 @@ pizzaJson.forEach((element, index) => {
 
     pizzaOption.querySelector('a').setAttribute('data-key', index);
     pizzaOption.querySelector('.pizza-item--img img').src = element.img;
-    pizzaOption.querySelector('.pizza-item--price').innerHTML = `R$ ${element.price.toFixed(2)}`;
+    pizzaOption.querySelector('.pizza-item--price').innerHTML = `R$ ${(element.price + 10).toFixed(2)}`;
     pizzaOption.querySelector('.pizza-item--name').innerHTML = element.name;
     pizzaOption.querySelector('.pizza-item--desc').innerHTML = element.description;
 
@@ -33,28 +33,33 @@ function openModal(key){
     pricePizza = pizzaJson[count].price.toFixed(2);
     qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${(parseFloat(pricePizza) + 10).toFixed(2)}`;
 
-    sizes.forEach((element) => {                                                                    // AQUI O PREÇO MUDA A PARTIR DO PESO ESCOLHIDO
-        element.querySelector('span').innerHTML = pizzaJson[count].sizes[element.dataset.key];
-        element.addEventListener('click', () => {
-            if(element.dataset.key === "0"){
-                qs('.pizzaInfo--size.selected').classList.remove('selected');
-                element.classList.add('selected');
-                qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${pricePizza}`;
-            }else if(element.dataset.key === "1"){
-                qs('.pizzaInfo--size.selected').classList.remove('selected');
-                element.classList.add('selected');
-                qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${(parseFloat(pricePizza) + 5).toFixed(2)}`;
-            }else if(element.dataset.key === "2"){
-                qs('.pizzaInfo--size.selected').classList.remove('selected');
-                element.classList.add('selected');
-                qs('.pizzaInfo--actualPrice').innerHTML = `R$ ${(parseFloat(pricePizza) + 10).toFixed(2)}`;
-            }
-        });
-    });
+    setPrice(count, pricePizza, qs('.pizzaInfo--actualPrice'));
 
     qs('.pizzaWindowArea').style.opacity = 0;
     qs('.pizzaWindowArea').style.display = 'flex';
     setTimeout(()=>{
         qs('.pizzaWindowArea').style.opacity = 1;
     }, 200);
+}
+function setPrice(count, pricePizza, htmlElement){
+    for (let index = 0; index < sizes.length; index++) {
+        let element = sizes[index];
+        
+        element.querySelector('span').innerHTML = pizzaJson[count].sizes[element.dataset.key];
+        element.addEventListener('click', () => {
+            if(element.dataset.key === "0"){
+                qs('.pizzaInfo--size.selected').classList.remove('selected');
+                element.classList.add('selected');
+                htmlElement.innerHTML = `R$ ${parseFloat(pricePizza).toFixed(2)}`;
+            }else if(element.dataset.key === "1"){
+                qs('.pizzaInfo--size.selected').classList.remove('selected');
+                element.classList.add('selected');
+                htmlElement.innerHTML = `R$ ${(parseFloat(pricePizza) + 5).toFixed(2)}`;
+            }else if(element.dataset.key === "2"){
+                qs('.pizzaInfo--size.selected').classList.remove('selected');
+                element.classList.add('selected');
+                htmlElement.innerHTML = `R$ ${(parseFloat(pricePizza) + 10).toFixed(2)}`;
+            }
+        });
+    }
 }
