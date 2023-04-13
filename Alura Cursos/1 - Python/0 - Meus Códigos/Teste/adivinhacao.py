@@ -15,7 +15,7 @@ buttonImage.click()
 #ENTRANDO NO SITE DO GOOGLE IMAGEM
 time.sleep(2)
 
-inputSearch = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")
+inputSearch = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/textarea")
 inputSearch.send_keys("Carros")
 
 buttonSearch = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/button")
