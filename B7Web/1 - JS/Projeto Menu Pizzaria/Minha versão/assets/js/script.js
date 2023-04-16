@@ -47,9 +47,11 @@ function openModal(key){ // Abrindo a pizza do qual eu cliquei
     }, 200);
 }
 function setPriceByQuantity(tPP, pHE, qHE) {
+    console.log(parseFloat(tPP))
     for (let index = 0; index < quantities.length; index++) {
         let element = quantities[index];
         let num = parseFloat(pHE.textContent.replace(/[^0-9.]+/g,''))
+        console.log(num)
         element.addEventListener('click', () => {
             if (element.dataset.qt === "+") {
                 qHE.innerHTML = parseInt(qHE.textContent) + 1
