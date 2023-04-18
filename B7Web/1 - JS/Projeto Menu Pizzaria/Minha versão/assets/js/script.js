@@ -38,30 +38,13 @@ function openModal(key){ // Abrindo a pizza do qual eu cliquei
 
     setPriceBySize(thisPizzaKey, thisPizzaPrice, priceHtmlElement, quantityHtmlElement); // Modifica os valores de preço dependendo do tamanho escolhido
 
-    setPriceByQuantity(thisPizzaPrice, priceHtmlElement, quantityHtmlElement); // Modifica o valor e a quantidade da pizza mediante a quantidade
+    
 
     qs('.pizzaWindowArea').style.opacity = 0;
     qs('.pizzaWindowArea').style.display = 'flex';
     setTimeout(()=>{
         qs('.pizzaWindowArea').style.opacity = 1;
     }, 200);
-}
-function setPriceByQuantity(tPP, pHE, qHE) {
-    console.log(parseFloat(tPP))
-    for (let index = 0; index < quantities.length; index++) {
-        let element = quantities[index];
-        let num = parseFloat(pHE.textContent.replace(/[^0-9.]+/g,''))
-        console.log(num)
-        element.addEventListener('click', () => {
-            if (element.dataset.qt === "+") {
-                qHE.innerHTML = parseInt(qHE.textContent) + 1
-                pHE.innerHTML = `R$ ${(num + parseFloat(tPP)).toFixed(2)}`
-            } else if(element.dataset.qt === "-" && parseInt(qHE.textContent) > 1){
-                qHE.innerHTML = parseInt(qHE.textContent) - 1
-                pHE.innerHTML = `R$ ${(num - parseFloat(tPP)).toFixed(2)}`
-            }
-        })
-    }
 }
 function setPriceBySize(thisPizzaKey, thisPizzaPrice, priceHtmlElement, quantityHtmlElement){
     for (let index = 0; index < sizes.length; index++) {
