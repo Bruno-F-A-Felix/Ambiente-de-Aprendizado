@@ -1,7 +1,8 @@
 const qs = (el) => document.querySelector(el);
 const qsAll = (el) => document.querySelectorAll(el); // 'el' é uma vatiavel criada dentro do parametro da função. Seu valor em enviado quando chamado
 const sizes = qsAll('.pizzaInfo--size');    // Tamanhos, selecionamos todas as tags que contem o tamanho das pizzas
-const quantities = qsAll('.pizzaInfo--qtButtom'); // Quantidades, selecionamos todas as tags que contem a opção de escolha da quantidade
+const priceHtmlElement = qs("[data-priceModal]");
+//const quantities = qsAll('.pizzaInfo--qtButtom'); // Quantidades, selecionamos todas as tags que contem a opção de escolha da quantidade
 
 pizzaJson.forEach((element, index) => {
     let pizzaOption = qs('.pizza-item').cloneNode(true);  // Primeiro precisamos clonar um elemento molde para criarmos um novo e adiciona-lo em seguida
@@ -26,7 +27,6 @@ pizzaJson.forEach((element, index) => {
 function openModal(key){ // Abrindo a pizza do qual eu cliquei
     let thisPizzaKey = key.dataset.key //Armazenando em thisPizzaKey o valor de data-key do elemento 'a'
     let thisPizzaPrice; //Variavel para armazenar o valor da pizza.
-    let priceHtmlElement = qs('.pizzaInfo--actualPrice');
     let quantityHtmlElement = qs('.pizzaInfo--qt');
 
     qs('.pizzaBig img').src = pizzaJson[thisPizzaKey].img;
@@ -38,7 +38,20 @@ function openModal(key){ // Abrindo a pizza do qual eu cliquei
 
     setPriceBySize(thisPizzaKey, thisPizzaPrice, priceHtmlElement, quantityHtmlElement); // Modifica os valores de preço dependendo do tamanho escolhido
 
-    
+    let quantities = qsAll('.pizzaInfo--qtButtom')
+    quantities.forEach(element => {
+        element.addEventListener('click', () =>{
+            if (element.dataset.qt === "-" && parseInt(quantityHtmlElement.textContent) > 1) {
+                quantityHtmlElement.innerHTML = parseInt(quantityHtmlElement.textContent) - 1
+                let num = parseFloat(priceHtmlElement.textContent.match(/\d+\.\d+/)[0]);
+                priceHtmlElement.innerHTML = `R$ ${(num - parseFloat(thisPizzaPrice)).toFixed(2)}`
+            }else if(element.dataset.qt === "+"){
+                quantityHtmlElement.innerHTML = parseInt(quantityHtmlElement.textContent) + 1
+                let num = parseFloat(priceHtmlElement.textContent.match(/\d+\.\d+/)[0]);
+                priceHtmlElement.innerHTML = `R$ ${(num + parseFloat(thisPizzaPrice)).toFixed(2)}`
+            }
+        })
+    });
 
     qs('.pizzaWindowArea').style.opacity = 0;
     qs('.pizzaWindowArea').style.display = 'flex';
