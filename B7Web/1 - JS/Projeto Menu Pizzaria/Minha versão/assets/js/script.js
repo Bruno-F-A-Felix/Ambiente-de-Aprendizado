@@ -105,3 +105,9 @@ function setPriceByQuantities(quantitiesButtom, quantityHtmlElement, thisPizzaPr
         })
     });
 }
+function clickCloseWindow(){
+    qs('.pizzaWindowArea').style.opacity = 0;
+    setTimeout(()=>{
+        qs('.pizzaWindowArea').style.display = 'none';
+    }, 500);
+}
