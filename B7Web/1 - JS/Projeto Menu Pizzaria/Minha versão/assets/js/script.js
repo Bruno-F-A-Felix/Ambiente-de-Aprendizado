@@ -1,11 +1,14 @@
+// 'el' é uma vatiavel criada dentro do parametro da função. Seu valor em enviado quando chamado
 const qs = (el) => document.querySelector(el);
-const qsAll = (el) => document.querySelectorAll(el); // 'el' é uma vatiavel criada dentro do parametro da função. Seu valor em enviado quando chamado
-const sizes = qsAll('.pizzaInfo--size');    // Tamanhos, selecionamos todas as tags que contem o tamanho das pizzas
+const qsAll = (el) => document.querySelectorAll(el);
+// Tamanhos, selecionamos todas as tags que contem o tamanho das pizzas
+const sizes = qsAll('.pizzaInfo--size');
+// Quantidades, selecionamos todas as tags que mostram o valor da pizza no modal
 const priceHtmlElement = qs("[data-priceModal]");
-//const quantities = qsAll('.pizzaInfo--qtButtom'); // Quantidades, selecionamos todas as tags que contem a opção de escolha da quantidade
 
+// Primeiro precisamos clonar um elemento molde para criarmos um novo e adiciona-lo em seguida
 pizzaJson.forEach((element, index) => {
-    let pizzaOption = qs('.pizza-item').cloneNode(true);  // Primeiro precisamos clonar um elemento molde para criarmos um novo e adiciona-lo em seguida
+    let pizzaOption = qs('.pizza-item').cloneNode(true);
 
     pizzaOption.querySelector('a').setAttribute('data-key', index);
     pizzaOption.querySelector('.pizza-item--img img').src = element.img;
