@@ -2,17 +2,20 @@
 const qs = (el) => document.querySelector(el);
 const qsAll = (el) => document.querySelectorAll(el);
 
-// Vetor de strings contendo valor@quantidade@tipoDePizza
+// Vetor de strings contendo valorSubTotal@quantidade@tipoDePizza
 cart = []
 
 // Tamanhos, selecionamos todas as tags que contem o tamanho das pizzas
 const sizes = qsAll('.pizzaInfo--size');
 
-// Selecionamos todas as tags que mostram o valor da pizza no modal
+// ValorSubTotal, Selecionamos todas as tags que mostram o valor da pizza no modal
 const priceHtmlElement = qs("[data-priceModal]");
 
-// Pegamos a tag que contém o valor da quantidade de pizza selecionada
+// Quantidade, Pegamos a tag que contém o valor da quantidade de pizza selecionada
 let quantityHtmlElement = qs('.pizzaInfo--qt');
+
+// TipoDePizza, Variavel para monitorar qual pizza estamos trabalhando
+let thisPizzaKey
 
 // Primeiro precisamos clonar um elemento molde para criarmos um novo e adiciona-lo em seguida
 pizzaJson.forEach((element, index) => {
@@ -41,7 +44,7 @@ pizzaJson.forEach((element, index) => {
 function openModal(key){
 
     // Armazenando em thisPizzaKey o valor de data-key do elemento 'a'
-    let thisPizzaKey = key.dataset.key
+    thisPizzaKey = key.dataset.key
     let thisPizzaPrice;
     let quantitiesButtom = qsAll('.pizzaInfo--qtButtom')
 
