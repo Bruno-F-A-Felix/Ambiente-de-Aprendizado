@@ -63,7 +63,7 @@ c('.pizzaInfo--qtmenos').addEventListener('click', ()=>{
         modalPrice -= pizzaJson[modalKey].price
         c('.pizzaInfo--qt').innerHTML = modalQt;
         c('.pizzaInfo--actualPrice').innerHTML = `R$ ${modalPrice.toFixed(2)}`
-        }
+    }
 });
 c('.pizzaInfo--qtmais').addEventListener('click', ()=>{
     modalQt++;
