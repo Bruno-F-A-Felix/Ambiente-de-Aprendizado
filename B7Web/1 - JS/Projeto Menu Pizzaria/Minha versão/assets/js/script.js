@@ -3,7 +3,7 @@ const qs = (el) => document.querySelector(el);
 const qsAll = (el) => document.querySelectorAll(el);
 
 // Primeiro precisamos clonar um elemento molde para criarmos um novo e adiciona-lo em seguida
-pizzaJson.forEach((element, index) => {
+pizzaJson.map((element, index) => {
     let pizzaOption = qs('.pizza-item').cloneNode(true);
 
     pizzaOption.querySelector('a').setAttribute('data-key', index);
