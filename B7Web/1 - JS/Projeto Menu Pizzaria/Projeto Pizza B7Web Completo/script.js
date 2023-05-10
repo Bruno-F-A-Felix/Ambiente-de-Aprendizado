@@ -1,6 +1,7 @@
 let cart = [];
 let modalQt = 1;
 let modalKey = 0;
+let modalPrice
 
 const c = (el)=>document.querySelector(el);
 const cs = (el)=>document.querySelectorAll(el);
@@ -24,6 +25,7 @@ pizzaJson.map((item, index)=>{
         c('.pizzaBig img').src = pizzaJson[key].img;
         c('.pizzaInfo h1').innerHTML = pizzaJson[key].name;
         c('.pizzaInfo--desc').innerHTML = pizzaJson[key].description;
+        modalPrice = pizzaJson[key].price
         c('.pizzaInfo--actualPrice').innerHTML = `R$ ${pizzaJson[key].price.toFixed(2)}`;
         c('.pizzaInfo--size.selected').classList.remove('selected');
         cs('.pizzaInfo--size').forEach((size, sizeIndex)=>{
@@ -58,17 +60,25 @@ cs('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton').forEach((item)=>{
 c('.pizzaInfo--qtmenos').addEventListener('click', ()=>{
     if(modalQt > 1) {
         modalQt--;
+        modalPrice -= pizzaJson[modalKey].price
         c('.pizzaInfo--qt').innerHTML = modalQt;
-    }
+        c('.pizzaInfo--actualPrice').innerHTML = `R$ ${modalPrice.toFixed(2)}`
+        }
 });
 c('.pizzaInfo--qtmais').addEventListener('click', ()=>{
     modalQt++;
+    modalPrice += pizzaJson[modalKey].price
     c('.pizzaInfo--qt').innerHTML = modalQt;
+    c('.pizzaInfo--actualPrice').innerHTML = `R$ ${modalPrice.toFixed(2)}`
 });
-cs('.pizzaInfo--size').forEach((size, sizeIndex)=>{
-    size.addEventListener('click', (e)=>{
+cs('.pizzaInfo--size').forEach((size)=>{
+    size.addEventListener('click', () => {
         c('.pizzaInfo--size.selected').classList.remove('selected');
         size.classList.add('selected');
+        modalQt = 1
+        modalPrice = pizzaJson[modalKey].price
+        c('.pizzaInfo--qt').innerHTML = modalQt;
+        c('.pizzaInfo--actualPrice').innerHTML = `R$ ${pizzaJson[modalKey].price.toFixed(2)}`
     });
 });
 c('.pizzaInfo--addButton').addEventListener('click', ()=>{
