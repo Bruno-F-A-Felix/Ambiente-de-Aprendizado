@@ -10,9 +10,11 @@ const sizes = qsAll('.pizzaInfo--size');
 
 // ValorSubTotal, Selecionamos todas as tags que mostram o valor da pizza no modal
 const priceHtmlElement = qs("[data-priceModal]");
+let price
 
 // Quantidade, Pegamos a tag que contém o valor da quantidade de pizza selecionada
 const quantityHtmlElement = qs('.pizzaInfo--qt');
+let quantity = 1;
 
 // TipoDePizza, Variavel para monitorar qual pizza estamos trabalhando
 let thisPizzaKey
@@ -58,13 +60,14 @@ function openModal(key){
 
     // Coletando o valor da pizza clicada
     thisPizzaPrice = pizzaJson[thisPizzaKey].price.toFixed(2);
+    price = parseFloat(thisPizzaPrice)
     priceHtmlElement.innerHTML = `R$ ${(parseFloat(thisPizzaPrice) + 10).toFixed(2)}`;
-
-    // Modifica os valores de preço dependendo do tamanho escolhido
-    setPriceBySize(thisPizzaKey, thisPizzaPrice, priceHtmlElement, quantityHtmlElement);
 
     // Altera o valor total de acordo com a quantidade de pizza selecionada
     setPriceByQuantities(quantitiesButtom, quantityHtmlElement, thisPizzaPrice)
+
+    // Modifica os valores de preço dependendo do tamanho escolhido
+    setPriceBySize(thisPizzaKey, thisPizzaPrice, priceHtmlElement, quantityHtmlElement);
 
     qs('.pizzaWindowArea').style.opacity = 0;
     qs('.pizzaWindowArea').style.display = 'flex';
@@ -80,29 +83,33 @@ function setPriceBySize(thisPizzaKey, thisPizzaPrice, priceHtmlElement, quantity
         element.addEventListener('click', () => {
             if(element.dataset.key === "0"){
                 quantityHtmlElement.innerHTML = 1
+                quantity = 1
                 qs('.pizzaInfo--size.selected').classList.remove('selected');
                 element.classList.add('selected');
                 priceHtmlElement.innerHTML = `R$ ${parseFloat(thisPizzaPrice).toFixed(2)}`;
+                price = parseFloat(thisPizzaPrice);
+                console.log(price)
             }else if(element.dataset.key === "1"){
                 quantityHtmlElement.innerHTML = 1
+                quantity = 1
                 qs('.pizzaInfo--size.selected').classList.remove('selected');
                 element.classList.add('selected');
                 priceHtmlElement.innerHTML = `R$ ${(parseFloat(thisPizzaPrice) + 5).toFixed(2)}`;
+                price = parseFloat(thisPizzaPrice + 5);
+                console.log(price)
             }else if(element.dataset.key === "2"){
                 quantityHtmlElement.innerHTML = 1
+                quantity = 1
                 qs('.pizzaInfo--size.selected').classList.remove('selected');
                 element.classList.add('selected');
                 priceHtmlElement.innerHTML = `R$ ${(parseFloat(thisPizzaPrice) + 10).toFixed(2)}`;
+                price = parseFloat(thisPizzaPrice + 10);
+                console.log(price)
             }
         });
     }
 }
 function setPriceByQuantities(quantitiesButtom, quantityHtmlElement, thisPizzaPrice){
-    let quantity = 1;
-    let price = parseFloat(thisPizzaPrice);
-
-    quantityHtmlElement.innerHTML = quantity;
-
     quantitiesButtom.forEach(element => {
         element.addEventListener('click', () =>{
             if (element.dataset.qt === "-" && quantity > 1) {
@@ -111,6 +118,7 @@ function setPriceByQuantities(quantitiesButtom, quantityHtmlElement, thisPizzaPr
             }else if(element.dataset.qt === "+"){
                 quantity++;
                 price += parseFloat(thisPizzaPrice);
+                console.log(price)
             }
 
             quantityHtmlElement.innerHTML = quantity;
