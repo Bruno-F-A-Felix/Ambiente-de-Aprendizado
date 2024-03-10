@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Viagem</title>
+</head>
+<body>
+    <header>
+        <h1>Faça sua Reserva de Viagem Com a Gente!</h1>
+    </header>
+    <section>
+        <h2>Faça sua Reserva</h2>
+        <form action="" method="post" style="display: flex; flex-direction: column; gap: 20px;">
+            <fieldset>
+                <legend>Preencha com seus dados pessoais</legend>
+                <label for="name">Nome:
+                    <input type="text" name="name" id="name" required>
+                </label>
+                <label for="email">Email:
+                    <input type="email" name="email" id="email" required>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Escolha alguns de nossos serviços</legend>
+                <label for="passage">
+                    <input type="checkbox" name="passage" id="passage">
+                    Comprar uma Passagem
+                </label>
+                <br>
+                <label for="hosting">
+                    <input type="checkbox" name="hosting" id="hosting">
+                    Fazer uma Reserva de Hotel
+                </label>
+                <br>
+                <label for="rent">
+                    <input type="checkbox" name="rent" id="rent">
+                    Alugar um Veiculo
+                </label>
+            </fieldset>
+            <fieldset style="display: flex; gap: 20px;">
+                <legend>Escolha uma Forma de Pagamento e Prazo</legend>
+                <div id="payment-form">
+                    <label for="credit">
+                        <input type="radio" name="payment" id="credit">
+                        Cartão de Credito
+                    </label>
+                    <br>
+                    <label for="fetlock">
+                        <input type="radio" name="payment" id="fetlock">
+                        Boleto
+                    </label>
+                    <br>
+                    <label for="pix">
+                        <input type="radio" name="payment" id="pix">
+                        Pix
+                    </label>
+                </div>
+                <div id="payment-term">
+                    <label for="terms">
+                        Prazo de Pagamento: <br>
+                        <select name="terms" id="terms">
+                            <option value="money">Á Vista</option>
+                            <option value="five-times">5x sem juros</option>
+                            <option value="ten-times">10x sem juros</option>
+                        </select>
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Algo a Mais</legend>
+                <label for="observation">
+                    <strong>Caso queira colocar alguma observação a sua compra, fala aqui pra gente:</strong>
+                    <br>
+                    <br>
+                    <textarea name="observation" id="observation" cols="30" rows="5" style="resize: none;"></textarea>
+                </label>
+            </fieldset>
+            <input type="submit" name="submit" id="submit" value="Efetuar a Compra" style="align-self: flex-start; height: 30px;">
+        </form>
+    </section>
+    <footer>
+        <h4 style="text-align: center;">Developed by <em><a href="https://github.com/Bruno-F-A-Felix">Bruno-F-A-Felix</a></em></h4>
+    </footer>
+</body>
+</html>

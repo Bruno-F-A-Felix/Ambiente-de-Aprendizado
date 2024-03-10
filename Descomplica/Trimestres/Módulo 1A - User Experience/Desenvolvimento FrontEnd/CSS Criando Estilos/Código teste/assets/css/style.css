@@ -1,0 +1,19 @@
+ul {
+ 
+    list-style: none;
+ 
+    padding: 25px 50px 70px 0px;
+ 
+    background: gray;
+ 
+}
+ 
+ul li {
+ 
+    float: left;
+ 
+    padding: 10px;
+ 
+    color: white;                
+ 
+}
