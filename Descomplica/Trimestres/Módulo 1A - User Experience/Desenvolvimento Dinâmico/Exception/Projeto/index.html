@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Funcionários</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Cadastro de Funcionários</h1>
+    <form id="funcionarioForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required><br>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" min="18" required><br>
+
+        <label for="cargo">Cargo:</label>
+        <input type="radio" id="gerente" class="cargo" name="cargo" value="gerente" required>
+        <label for="gerente">Gerente</label>
+        <input type="radio" id="desenvolvedor" class="cargo" name="cargo" value="desenvolvedor" required>
+        <label for="desenvolvedor">Desenvolvedor</label><br>
+
+        <label for="departamento">Departamento (apenas para gerentes):</label>
+        <input type="text" id="departamento"><br>
+
+        <label for="linguagem">Linguagem de Programação (apenas para desenvolvedores):</label>
+        <input type="text" id="linguagem"><br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
