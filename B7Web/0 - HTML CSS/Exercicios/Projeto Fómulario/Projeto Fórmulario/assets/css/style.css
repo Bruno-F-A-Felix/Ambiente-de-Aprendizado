@@ -1,6 +1,10 @@
 body {
     margin: 0px;
     padding: 0px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 2fr 1fr;
+    justify-content: center;
 }
 header {
     display: flex;
@@ -19,23 +23,20 @@ header .container .crossLine {
     height: 2px;
     background-color: black;
 }
-form {
+main {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
-form main {
+main form {
+    height: 400px;
     width: 990px;
-}
-form main #sectionOne fieldset {
-    border: 4px double black;
-    padding: 10px;
-    position: relative;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
-form main #sectionOne fieldset legend {
+form section fieldset legend {
     padding: 10px 10px;
     position: absolute;
     left: 0px;
@@ -43,37 +44,59 @@ form main #sectionOne fieldset legend {
     font-size: 1.3rem;
     font-weight: bold;
 }
-form main #sectionOne fieldset .container {
+form section fieldset {
+    height: 160px;
+    min-width: 400px;
+    border: 4px double black;
+    padding: 40px 20px;
+    position: relative;
+}
+form section fieldset table {
+    font-size: large;
+}
+form section fieldset table .title {
+    text-align: right;
+}
+form section fieldset table .inputs {
+    text-align: left;
+}
+form .container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+form .container .blocks {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 720px;
-    margin: 25px 190px 10px 0px;
+    align-items: flex-start;
+    padding: 10px;
 }
-form main #sectionOne fieldset .container .inputs {
-    width: 720px;
+form .container .blocks .blockTitle {
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+form .container .blockCheck {
+    align-items: flex-start;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+form .submitButtons {
     display: flex;
+    flex-direction: column;
+    gap: 20px
 }
-form main #sectionOne fieldset .container .inputs .title {
-    flex: 1;
-    text-align: right;
-    font-size: 1.1rem;
-    padding: 5px 5px 5px 0px;
-    margin: 5px 0px;
+form .submitButtons input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #ccc;
+    font-size: 16px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
 }
-form main #sectionOne fieldset .container .inputs input,
-form main #sectionOne fieldset .container .inputs .contacts {
-    flex: 2;
-    font-size: 1rem;
-}
-form main #sectionOne fieldset .container .inputs input {
-    padding: 5px 0px;
-    margin: 5px 0px;
-}
-form main #sectionOne fieldset .container .inputs .contacts #ddd,
-form main #sectionOne fieldset .container .inputs .contacts #ramal {
-    width: 50px;
-}
-form main #sectionOne fieldset .container .inputs .contacts #phoneNumber {
-    width: 130px;
+footer {
+    text-align: center;
 }
