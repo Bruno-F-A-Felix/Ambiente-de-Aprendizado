@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Escola Virtual</title>
+    <title>Escola Virtual - Matricula</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -15,50 +15,46 @@
             <div class="crossLine"></div>
         </div>
     </header>
-    <form action="perfil.html" method="get">
         <main>
-            <section id="sectionOne">
+            <form action="perfil.html" method="get">
+                <section>
                 <fieldset>
                     <legend>Dados Pessoais:</legend>
-                    <div class="container">
-                        <div class="inputs">
-                            <div class="title">Nome do Aluno: </div>
-                            <input type="text" name="name" required>
-                        </div>
-                        <div class="inputs">
-                            <div class="title">Nascimento: </div>
-                            <input type="date" name="born" required>
-                        </div>
-                        <div class="inputs">
-                            <div class="title">Nome da Mãe: </div>
-                            <input type="text" name="mothersName" required>
-                        </div>
-                        <div class="inputs">
-                            <div class="title">Nome do Pai: </div>
-                            <input type="text" name="fathersName" required>
-                        </div>
-                        <div class="inputs">
-                            <div class="title">Telefone: </div>
-                            <div class="contacts">
-                                DDD (<input type="number" name="ddd" id="ddd" required>) 
-                                Tel: <input type="number" name="phoneNumber" id="phoneNumber" required>
-                                Ramal: <input type="number" name="ramal" id="ramal" required>
-                            </div>
-                        </div>
-                        <div class="inputs">
-                            <div class="title">E-Mail: </div>
-                            <input type="email" name="email" required>
-                        </div>
-                    </div>
+                    <table>
+                        <tr>
+                            <td class="title">Nome do Aluno: </td>
+                            <td class="inputs"><input type="text" name="name" required></td>
+                        </tr>
+                        <tr>
+                            <td class="title">Data de Nascimento:</td>
+                            <td class="inputs"><input type="date" name="born" required></td>
+                        </tr>
+                        <tr>
+                            <td class="title">Nome da Mãe:</td>
+                            <td class="inputs"><input type="text" name="mothersName" required></td>
+                        </tr>
+                        <tr>
+                            <td class="title">Nome do Pai:</td>
+                            <td class="inputs"><input type="text" name="fathersName" required></td>
+                        </tr>
+                        <tr>
+                            <td class="title">Telefone: </td>
+                            <td class="inputs"><input type="number" name="phoneNumber" required></td>
+                        </tr>
+                        <tr>
+                            <td class="title">E-mail: </td>
+                            <td class="inputs"><input type="email" name="email" required></td>
+                        </tr>
+                    </table>
                 </fieldset>
             </section>
-            <section id="sectionTwo">
+            <section>
                 <fieldset>
                     <legend>Informaçãoes de Matrícula</legend>
-                    <div class="containerColumn">
+                    <div class="container">
                         <div class="blocks">
                             <label>
-                                <div>Série: </div>
+                                <div class="blockTitle">Série: </div>
                                 <select name="serie" required>
                                     <option value="pre-escolar">pré-escolar</option>
                                     <option value="alfabetização">alfabetização</option>
@@ -68,15 +64,8 @@
                                 </select>
                             </label>
                         </div>
-                        <div class="blocks">
-                            <div class="turnoRadio">
-                                <div>Turno: </div>
-                                <input type="radio" name="turno" value="Manhã">
-                                <input type="radio" name="turno" value="Tarde">
-                            </div>
-                        </div>
-                        <div class="blocks">
-                            <div>Atividades Extracurriculares</div>
+                        <div class="blocks blockCheck">
+                            <div class="blockTitle">Atividades Extracurriculares</div>
                             <label>
                                 <input type="checkbox" name="informatica">Informática
                             </label>
@@ -96,16 +85,26 @@
                                 <input type="checkbox" name="futebol">Futebol
                             </label>
                         </div>
+                        <div class="blocks">
+                            <div class="turnoRadio">
+                                <div class="blockTitle">Turno: </div>
+                                <input type="radio" name="turno" id="morning" value="Manhã">
+                                <label for="morning">Manhã</label>
+                                <br>
+                                <input type="radio" name="turno" id="afternoon" value="Tarde">
+                                <label for="afternoon">Tarde</label>
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
             </section>
-        </main>
-        <footer>
-            <div class="container">
-                <button>Envia Formulário</button>
-                <button><a href="">Limpa Campos</a></button>
+            <div class="submitButtons">
+                <input type="submit" value="Enviar Formulário">
             </div>
-        </footer>
-    </form>
+        </form>
+    </main>
+    <footer>
+        <p>Todos os direitos reservados - 2024 - <a href="https://github.com/Bruno-F-A-Felix">Bruno-F-A-Felix</a></p>
+    </footer>
 </body>
 </html>
