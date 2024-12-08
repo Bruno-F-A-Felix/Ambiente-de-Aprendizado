@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dados de Clientes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Dados de Clientes</h1>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Nome Completo</th>
+                    <th>Data de Nascimento</th>
+                    <th>Email</th>
+                    <th>Endereço</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-clientes">
+                <tr>
+                    <td>João Silva</td>
+                    <td>01/01/1980</td>
+                    <td>joao.silva@example.com</td>
+                    <td>Rua A, 123</td>
+                </tr>
+                <!-- Mais linhas podem ser adicionadas aqui -->
+            </tbody>
+        </table>
+
+        <h2 class="mt-4">Adicionar Cliente</h2>
+        <form id="form-cliente">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" class="form-control" id="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="data-nascimento">Data de Nascimento</label>
+                <input type="date" class="form-control" id="data-nascimento" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" class="form-control" id="endereco" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
